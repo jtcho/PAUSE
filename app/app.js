@@ -13,7 +13,13 @@ angular.module('pauseApp', [
     $stateProvider
     .state('main', {
         abstract: true,
-        templateUrl: 'views/main.html'
+        templateUrl: 'views/main.html',
+        controller: function($scope) {
+            $scope.dt = new Date();
+            setInterval(function() {
+                $scope.dt = new Date();
+            }, 1000);
+        }
     })
     .state('main.test', {
         url: '',

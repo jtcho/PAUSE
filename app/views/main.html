@@ -1,7 +1,9 @@
 
 <!--<div class="outer_frame"></div>-->
 <div class="screen-container">
-	<div class="screen">
+	<div class="time"><h2>{{dt | date:'shortTime'}}</h2></div>
+	<div class="date"><h2>{{dt | date:'MMM d'}}</h2></div>
+	<div class="screen" style="margin-top: -65px;">
 	    <div ui-view=""></div>
 	</div>
 </div>
