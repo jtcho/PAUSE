@@ -14,15 +14,17 @@ angular.module('pauseApp', [
     .state('main', {
         abstract: true,
         templateUrl: 'views/main.html',
+        controller: 'MainCtrl'
+    })
+    .state('main.newCharacter', {
+        url: '',
+        templateUrl: 'views/newcharacter.html',
         controller: function($scope) {
-            $scope.dt = new Date();
-            setInterval(function() {
-                $scope.dt = new Date();
-            }, 1000);
+
         }
     })
     .state('main.test', {
-        url: '',
+        url: '/status', //Note that these urls don't actually show up in browser.
         templateUrl: 'views/status.html',
         controller: 'StatusCtrl'
     })
