@@ -2,3 +2,5 @@ dist/
 node_modules/
 npm-debug.log
 .sass-cache/
+pause.sublime-project
+pause.sublime-workspace

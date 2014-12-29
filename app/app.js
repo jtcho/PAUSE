@@ -4,19 +4,23 @@ angular.module('pauseApp', [
     'ui.router'
 ])
 .config(function($stateProvider) {
-
-    console.log('Setting up config for the states.');
-
+    //Set up states.
     $stateProvider
     .state('main', {
         abstract: true,
-        template: '<ui-view />'
+        templateUrl: 'views/main.html'
     })
     .state('main.test', {
         url: '',
-        template: '<h1>Test</h1>',
-        controller: function() {
-            console.log('Test2.');
+        templateUrl: 'views/status.html',
+        controller: function($scope) {
+            $scope.expPercent = 0.2;
+            setInterval(function() {
+                $scope.expPercent += 0.005;
+                if ($scope.expPercent > 1.0)
+                    $scope.expPercent -= 1.0;
+                $scope.$apply();
+            }, 15);
         }
     })
     ;
