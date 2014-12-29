@@ -1,0 +1,11 @@
+//Extension Manifest
+{
+    "manifest_version": 2,
+    "name": "PAUSE",
+    "description": "Replace your new tab page with a RPG-style status screen!",
+    "version": "0.0",
+    "permissions": [],
+    "chrome_url_overrides" : {
+        "newtab": "index.html"
+    }
+}

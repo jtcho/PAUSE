@@ -1,0 +1,10 @@
+{
+  "name": "PAUSE",
+  "description": "Replace your Chrome new tab page with a RPG-style status screen!",
+  "version": "1.0.0",
+  "dependencies": {
+    "bootstrap-sass-official": "~3.3.1",
+    "angular": "~1.3.8",
+    "angular-ui-router": "~0.2.13"
+  }
+}
