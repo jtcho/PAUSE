@@ -1,4 +1,4 @@
-@import '../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap';
+// @import '../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap';
 
 @font-face {
     font-family: 'Joystix';
@@ -8,6 +8,10 @@
 html, body {
     width: 100%;
     background-color: #59a3a9;
+}
+
+.text-center {
+    text-align: center;
 }
 
 .outer_frame {
@@ -39,7 +43,7 @@ html, body {
 .expbar_fill {
     position:relative;
     height: 26px;
-    margin: 20px auto;
+    margin: 10px auto 20px auto;
     background-color: #78d2da;
 }
 
@@ -50,9 +54,11 @@ h1, h2, h3, h4, h5, h6 {
 h1 {
     color: #fd982b;
     font-size: 4em;
+    margin: 20px 0 0 0;
 }
 
 h4 {
     color: #fcb05e;
     font-size: 1.5em;
+    margin: 0;
 }

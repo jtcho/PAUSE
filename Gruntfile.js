@@ -50,7 +50,10 @@ module.exports = function(grunt) {
             options: {
                 jshintrc: '.jshintrc',
             },
-            all: ['app/*.js']
+            all: [
+                'app/**/*.js',
+                '!app/bower_components/**'
+            ]
         }
     });
 

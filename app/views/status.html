@@ -3,11 +3,11 @@
 
     <h1>JT</h1>
 
-    <h4>Level 4 Programmer</h4>
+    <h4>Level {{data.level}} Programmer</h4>
 
     <div class="expbar_fill" style="
-        left: -{{204/2 * (1-expPercent)}}px;
-        width: {{204*expPercent}}px;
+        left: -{{204/2 * (1-data.expPercent)}}px;
+        width: {{204*data.expPercent}}px;
         ">
         <div class="expbar"></div>
     </div>
