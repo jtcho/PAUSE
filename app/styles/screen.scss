@@ -82,6 +82,7 @@ h4 {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    margin: 0 auto;
 }
 
 .screen {
@@ -184,15 +185,16 @@ span{
 
 .form-name {
     margin: 20px auto;
+    text-align: center;
 }
 
 .input-name {
     font-family: 'Joystix';
+    font-size: 4em;
+    width: 10em;
     color:#fd982b;
     text-align:center;
-    width:8em;
-    height:1.8em;
-    font-size:5em;
+    margin: 0 auto;
     background-color: $screenColor;
     border: none;
     border-bottom-style: solid;

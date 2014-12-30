@@ -56,7 +56,8 @@ h4 {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%); }
+  transform: translate(-50%, -50%);
+  margin: 0 auto; }
 
 .screen {
   width: 70%;
@@ -142,15 +143,16 @@ span {
   to {
     opacity: .0; } }
 .form-name {
-  margin: 20px auto; }
+  margin: 20px auto;
+  text-align: center; }
 
 .input-name {
   font-family: 'Joystix';
+  font-size: 4em;
+  width: 10em;
   color: #fd982b;
   text-align: center;
-  width: 8em;
-  height: 1.8em;
-  font-size: 5em;
+  margin: 0 auto;
   background-color: #e6f6f7;
   border: none;
   border-bottom-style: solid; }
