@@ -19,14 +19,10 @@ angular.module('pauseApp')
 		//If no data, start from new screen.
 		if (! $rootScope.data) {
 			console.log('Creating new character!');
-			// $rootScope.data = {};
-			// $rootScope.data.level = 1;
-			// $rootScope.data.expPercent = 0.2;
-			// $rootScope.data.name = 'JT';
 		}
 		else {
 			console.log('Found existing character!');
-			$state.go('main.test');
+			$state.go('main.status');
 		}
 	}
 ]);

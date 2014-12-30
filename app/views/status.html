@@ -1,9 +1,9 @@
 
-<div class="text-center">
+<div>
 
-    <h1>{{data.name}}</h1>
+    <h1 class="text-center">{{data.name}}</h1>
 
-    <h4>Level {{data.level}} Programmer</h4>
+    <h4 class="text-center">Level {{data.level}} Programmer</h4>
 
     <div class="expbar_fill" style="
         left: -{{204/2 * (1-data.expPercent)}}px;
@@ -12,13 +12,14 @@
         <div class="expbar" tooltip tooltip-content="{{data.expPercent*100}}"></div>
     </div>
 
-    <div class="container">
-    	<div class="left">
-	    	<div class="avatar-card">
+    <div style="width: 80%; height: 300px; margin: 0 auto;">
+    	<!-- Filler Div. Yes. -->
+    	<div style="width:10%; display:inline-block; height: 100%; vertical-align:top;">
+    	</div><div class="left" style="">
+	    	<div class="avatar-card" >
 	    		<div class="avatar"></div>
 	    	</div>
-    	</div>
-    	<div class="right">
+    	</div><div class="right" style="">
     		<ul>
     			<li>Birthday: 10/9</li>
     			<li>Alignment: Lawful Good</li>

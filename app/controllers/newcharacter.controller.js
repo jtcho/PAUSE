@@ -1,10 +1,15 @@
 'use strict';
 
 angular.module('pauseApp')
-.controller('NewNameCtrl', ['$scope', function($scope) {
+.controller('NewNameCtrl', ['$rootScope', '$scope', '$state', function($rootScope, $scope, $state) {
 
 	$scope.onSubmit = function() {
-		console.log('Submitted.');
+		$rootScope.data = {};
+		$rootScope.data.level = 1;
+		$rootScope.data.expPercent = 0;
+		$rootScope.data.name = $scope.characterName;
+
+		$state.go('main.status');
 	};
 
 }]);

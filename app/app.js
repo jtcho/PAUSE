@@ -23,7 +23,7 @@ angular.module('pauseApp', [
 
         }
     })
-    .state('main.test', {
+    .state('main.status', {
         url: '/status', //Note that these urls don't actually show up in browser.
         templateUrl: 'views/status.html',
         controller: 'StatusCtrl'
