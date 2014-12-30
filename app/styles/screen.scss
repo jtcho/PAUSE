@@ -1,5 +1,11 @@
 // @import '../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap';
 
+//VARIABLES
+$bodyColor: #59a3a9;
+$screenColor: #e6f6f7;
+
+//STYLES
+
 @font-face {
     font-family: 'Joystix';
     src: url('fonts/joystix_monospace.ttf');
@@ -7,7 +13,7 @@
 
 html, body {
     width: 100%;
-    background-color: #59a3a9;
+    background-color: $bodyColor;
 }
 
 
@@ -71,7 +77,7 @@ h4 {
 
 .screen-container {
     width: 100%;
-    background-color: #e6f6f7;
+    background-color: $screenColor;
     position:absolute;
     top: 50%;
     left: 50%;
@@ -174,4 +180,24 @@ span{
 
 @-webkit-keyframes blink{
     to{opacity: .0;}
+}
+
+.form-name {
+    margin: 20px auto;
+}
+
+.input-name {
+    font-family: 'Joystix';
+    color:#fd982b;
+    text-align:center;
+    width:8em;
+    height:1.8em;
+    font-size:5em;
+    background-color: $screenColor;
+    border: none;
+    border-bottom-style: solid;
+}
+
+.input-name:focus {
+    outline: 0;
 }

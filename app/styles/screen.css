@@ -141,5 +141,21 @@ span {
 @-webkit-keyframes blink {
   to {
     opacity: .0; } }
+.form-name {
+  margin: 20px auto; }
+
+.input-name {
+  font-family: 'Joystix';
+  color: #fd982b;
+  text-align: center;
+  width: 8em;
+  height: 1.8em;
+  font-size: 5em;
+  background-color: #e6f6f7;
+  border: none;
+  border-bottom-style: solid; }
+
+.input-name:focus {
+  outline: 0; }
 
 /*# sourceMappingURL=screen.css.map */
