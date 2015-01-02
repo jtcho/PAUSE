@@ -12,12 +12,12 @@
 </div>
 
 <div style="width: 100%; height:100px;" class="text-center">
-	<form name ="birthdayForm" class="form-name" ng-controller="NewBirthdayCtrl" style="display:inline-block; vertical-align:middle;">
+	<form name ="birthdayForm" class="form-name" style="display:inline-block; vertical-align:middle;">
 		<input id="birthdayInput" class="input-birthday" type="date" ng-model="value" placeholder="01/01/2000" min="2000-01-01" max="2000-12-31" required/>
 	</form>
 
-	<svg height="20" width="20" class="rightarrow">
-		<polygon points="1,1 1,20 20,10" style="fill:#b2d8dc;"/>
+	<svg height="30" width="30" class="rightarrow" ng-click="onSubmit()">
+		<polygon points="1,1 1,30 30,15" style="fill:#b2d8dc;"/>
 	</svg>
 </div>
 

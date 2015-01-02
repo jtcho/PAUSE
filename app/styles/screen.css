@@ -12,9 +12,10 @@ body {
   background-size: cover;
   background-repeat: no-repeat; }
 
-h1, h2, h3, h4, h5, h6, li {
+h1, h2, h3, h4, h5, h6, li, p {
   font-family: 'Joystix', sans-serif;
-  color: #b2d8dc; }
+  color: #b2d8dc;
+  -webkit-user-select: none; }
 
 h1 {
   font-size: 4em;

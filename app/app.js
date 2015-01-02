@@ -38,6 +38,16 @@ angular.module('pauseApp', [
         url: '',
         controller: 'NewBirthdayCtrl'
     })
+    .state('main.newclass', {
+        templateUrl: 'views/character_creation/new_class.html',
+        url: '',
+        controller: 'NewClassCtrl'
+    })
+    .state('main.newalignment', {
+        template: '<h2 class="text-center sheen">Coming soon...</h2>',
+        url: '',
+        controller: function($scope) {}
+    })
     /*
      * MAIN STATES
      */

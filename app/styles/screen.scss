@@ -28,9 +28,10 @@ body {
 }
 
 
-h1, h2, h3, h4, h5, h6, li {
+h1, h2, h3, h4, h5, h6, li, p {
     font-family: 'Joystix', sans-serif;
     color: $h1Color;
+    -webkit-user-select: none;
 }
 
 h1 {

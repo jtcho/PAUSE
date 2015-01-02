@@ -12,6 +12,9 @@
 .typed2 {
   -webkit-animation: type2 3s 1s steps(60, end) forwards; }
 
+.typed3 {
+  -webkit-animation: type3 3s 1s steps(60, end) forwards; }
+
 @-webkit-keyframes type {
   5% {
     opacity: 1; }
@@ -23,6 +26,12 @@
     opacity: 1; }
   100% {
     width: 43em;
+    opacity: 1.0; } }
+@-webkit-keyframes type3 {
+  5% {
+    opacity: 1; }
+  100% {
+    width: 45em;
     opacity: 1.0; } }
 span {
   width: 10px;
