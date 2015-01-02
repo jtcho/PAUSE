@@ -2,6 +2,7 @@
  * NEWNAME.HTML
  */
 .typed {
+  opacity: 0;
   white-space: nowrap;
   overflow: hidden;
   width: 0;
@@ -12,11 +13,17 @@
   -webkit-animation: type2 3s 1s steps(60, end) forwards; }
 
 @-webkit-keyframes type {
-  to {
-    width: 32em; } }
+  5% {
+    opacity: 1; }
+  100% {
+    width: 32em;
+    opacity: 1.0; } }
 @-webkit-keyframes type2 {
-  to {
-    width: 43em; } }
+  5% {
+    opacity: 1; }
+  100% {
+    width: 43em;
+    opacity: 1.0; } }
 span {
   width: 10px;
   height: 20px;
