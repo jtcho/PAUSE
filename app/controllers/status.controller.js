@@ -4,6 +4,13 @@ angular.module('pauseApp')
 //Status Screen Angular Controller
 .controller('StatusCtrl', ['$rootScope', '$scope', 'localStorageService', function($rootScope, $scope, localStorageService) {
 
+	angular.element('.animate-screen').css('opacity', 0.0);
+
+	angular.element('.animate-screen').animate({
+			opacity: 1,
+			'-webkit-animation-fill-mode': 'forwards'
+		}, 1000, function() {});
+
 	// setInterval(function() {
 	// 	$rootScope.data.expPercent += 0.001;
 	// 	if ($rootScope.data.expPercent > 1.0) {

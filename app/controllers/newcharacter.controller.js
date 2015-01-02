@@ -17,9 +17,12 @@ angular.module('pauseApp')
 		$rootScope.data.expPercent = 0;
 		$rootScope.data.name = $scope.characterName;
 
-		setTimeout(function() {
+		angular.element('.animate-screen').animate({
+			opacity: 0,
+			'-webkit-animation-fill-mode': 'forwards'
+		}, 500, function() {
 			$state.go('main.status');
-		}, 0);
+		});
 	};
 
 }]);

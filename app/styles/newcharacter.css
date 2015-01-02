@@ -1,0 +1,47 @@
+/*
+ * NEWCHARACTER.HTML
+ */
+.typed {
+  white-space: nowrap;
+  overflow: hidden;
+  width: 0;
+  -webkit-animation: type 3s 2s steps(60, end) forwards;
+  display: inline-block; }
+
+span {
+  width: 10px;
+  height: 20px;
+  margin-left: 5px;
+  background-color: #576b76;
+  display: inline-block;
+  -webkit-animation: blink 1s infinite; }
+
+.form-name {
+  margin: 20px auto;
+  text-align: center; }
+
+.input-name {
+  font-family: 'Joystix';
+  font-size: 4em;
+  width: 10em;
+  color: #a9becc;
+  text-align: center;
+  margin: 0 auto;
+  background-color: transparent;
+  border: none;
+  border-bottom-style: solid;
+  border-color: #a9becc; }
+
+.input-name:focus {
+  outline: 0; }
+
+.console-name {
+  width: 93%;
+  margin: 20px auto;
+  background-color: #e6f6f7;
+  border: 5px solid #576b76;
+  box-shadow: 0 0 0 5px #a9bfcc inset;
+  -webkit-animation: fadein 2s forwards;
+  opacity: 0; }
+  .console-name h4 {
+    color: #576b76; }

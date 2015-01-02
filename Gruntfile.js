@@ -22,9 +22,18 @@ module.exports = function(grunt) {
         //Sass task.
         sass: {
             dist: {
-                files: {
-                    'app/styles/screen.css' : 'app/styles/screen.scss'
-                }
+                options: {
+                    compress: false,
+                    sourcemap: 'none'
+                },
+                files: [{
+                    expand: true,
+                    cwd: 'app',
+                    src: ['**/*.scss'],
+                    dest: 'app',
+                    ext: '.css'
+                    // 'app/styles/screen.css' : 'app/styles/screen.scss'
+                }]
             }
         },
         watch: {
@@ -68,4 +77,5 @@ module.exports = function(grunt) {
     //Default task(s).
     //grunt.registerTask('default', ['bowerInstall','watch']);
     grunt.registerTask('default', ['uglify', 'bowerInstall', 'jshint:all', 'sass']);
+    grunt.registerTask('serve', ['bowerInstall', 'jshint:all', 'sass', 'watch']);
 };

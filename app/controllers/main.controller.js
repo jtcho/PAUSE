@@ -7,10 +7,11 @@ angular.module('pauseApp')
 	    //Load previous data.
 		$rootScope.data = localStorageService.get('data');
 
-		if ($rootScope.data)
+		if ($rootScope.data) {
 			$state.go('main.status', [], {	location: false });	
 			//location: false
 			//Avoids annoying issue where state change cancels any pending url navigation.
+		}
 
 		//Bind rootScope to local storage.
 		localStorageService.bind($rootScope, 'data');

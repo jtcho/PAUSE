@@ -100,138 +100,6 @@ h4 {
 }
 
 /*
- * STATUS.HTML
- */
-
-.expbar {
-    width: 204px;
-    height: 26px;
-    background-image:url('../assets/images/expbar.png');
-    background-position:center;
-    position:relative;
-    top:-1px;
-}
-
-.expbar_fill {
-    position:relative;
-    height: 23px;
-    margin: 10px auto 20px auto;
-    background-color: #78d2da;
-}
-
-.container {
-    width: 60%;
-    height: 100%;
-    margin: 0 auto;
-}
-
-.left {
-    width:30%;
-    height:100%;
-    margin: 0;
-    display:inline-block;
-    vertical-align: top;
-}
-
-.right {
-    width:60%;
-    height:100%;
-    margin:0;
-    display:inline-block;
-    vertical-align: top;
-}
-
-.avatar-card {
-    background-image:url('../assets/images/avatar_card.png');
-    background-repeat:no-repeat;
-    margin: 0 auto;
-    width:120px;
-    height:185px;
-}
-
-.avatar {
-    width:100%;
-    height:100%;
-    background-image:url('../assets/images/avatar_test.png');
-    background-repeat:no-repeat;
-}
-
-ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    text-align: left;
-}
-
-li {
-    font-size: 1.3em;
-    color: #fd982b  ;
-}
-
-.tooltip-center .qtip-content{
-    text-align: center;
-    font-size: 2em;
-    font-family: 'Joystix';
-}
-
-/*
- * NEWCHARACTER.HTML
- */
-
-.typed {
-    white-space: nowrap;
-    overflow: hidden;
-    width: 0;
-    -webkit-animation: type 3s 2s steps(60, end) forwards; 
-    display:inline-block;
-}
-
-span{
-    width: 10px;
-    height: 20px;
-    margin-left:5px;
-    background-color:#576b76;
-    display:inline-block;
-    -webkit-animation: blink 1s infinite;
-}
-
-.form-name {
-    margin: 20px auto;
-    text-align: center;
-}
-
-.input-name {
-    font-family: 'Joystix';
-    font-size: 4em;
-    width: 10em;
-    color:$h2Color;
-    text-align:center;
-    margin: 0 auto;
-    background-color: rgba(0,0,0,0);
-    border: none;
-    border-bottom-style: solid;
-    border-color: $h2Color;
-}
-
-.input-name:focus {
-    outline: 0;
-}
-
-.console-name {
-    width: 93%; 
-    margin: 20px auto; 
-    background-color: #e6f6f7;
-    border: 5px solid #576b76;
-    box-shadow: 0 0 0 5px #a9bfcc inset;
-    -webkit-animation: fadein 2s forwards;
-    opacity:0;
-
-    h4 {
-        color: #576b76;
-    }
-}
-
-/*
  * ANIMATIONS
  */
 
@@ -264,18 +132,10 @@ span{
 }
 
 @-webkit-keyframes sheen {
-    30%, 100%{background-position: 0 0;}
+    50%, 100%{background-position: 0 0;}
 }
 
 .sheen:hover {
     color: rgba(178, 216, 220, 1.0);
 }
-
-/*
- *
- */
-
- .screen-animate.ng-enter, .screen-animate.ng-leave {
-
- }
 
