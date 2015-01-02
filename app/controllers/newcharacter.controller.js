@@ -58,7 +58,7 @@ function($scope, $state, $filter, storageLiason) {
 	//
 	input.keyup(function(e) {
 		delete keys[e.which];
-	})
+	});
 
 	//
 	$scope.value = new Date(2000, 0, 1);
@@ -168,7 +168,7 @@ var isVowel = function(letter) {
 		if (letter === vowels[i])
 			return true;
 	return false;
-}
+};
 
 /*
  * Function: transitionTo
