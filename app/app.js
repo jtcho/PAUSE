@@ -2,30 +2,35 @@
 
 angular.module('pauseApp', [
     'ui.router',
-    'LocalStorageModule'
+    'LocalStorageModule',
+    'ngAnimate'
 ])
-.config(function($stateProvider, localStorageServiceProvider) {
+.config(function($stateProvider, localStorageServiceProvider, $urlRouterProvider) {
 
     //
     localStorageServiceProvider.setPrefix('pause');
+
+    $urlRouterProvider.otherwise('/');
 
     //Set up states.
     $stateProvider
     .state('main', {
         abstract: true,
         templateUrl: 'views/main.html',
-        controller: 'MainCtrl'
+        controller: 'MainCtrl',
+        url: ''
     })
     .state('main.newCharacter', {
-        url: '',
         templateUrl: 'views/newcharacter.html',
+        url: '',
         controller: function($scope) {
 
         }
     })
     .state('main.status', {
-        url: '/status', //Note that these urls don't actually show up in browser.
+        // url: '/status', //Note that these urls don't actually show up in browser.
         templateUrl: 'views/status.html',
+        url:'',
         controller: 'StatusCtrl'
     })
     ;

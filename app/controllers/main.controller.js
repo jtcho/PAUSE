@@ -1,8 +1,19 @@
 'use strict';
 
 angular.module('pauseApp')
-.controller('MainCtrl', ['$rootScope', '$scope', 'localStorageService', '$state', 
-	function($rootScope, $scope, localStorageService, $state) {
+.controller('MainCtrl', ['$rootScope', '$scope', 'localStorageService', '$state', '$location', 
+	function($rootScope, $scope, localStorageService, $state, $location) {
+
+	    //Load previous data.
+		$rootScope.data = localStorageService.get('data');
+
+		if ($rootScope.data)
+			$state.go('main.status', [], {	location: false });	
+			//location: false
+			//Avoids annoying issue where state change cancels any pending url navigation.
+
+		//Bind rootScope to local storage.
+		localStorageService.bind($rootScope, 'data');
 
 		//Set up date to be used in application.
 		$scope.dt = new Date();
@@ -10,19 +21,5 @@ angular.module('pauseApp')
 	            setInterval(function() {
 	                $scope.dt = new Date();
 	            }, 1000);
-
-	    //Load previous data.
-		$rootScope.data = localStorageService.get('data');
-		//Bind rootScope to local storage.
-		localStorageService.bind($rootScope, 'data');
-
-		//If no data, start from new screen.
-		if (! $rootScope.data) {
-			console.log('Creating new character!');
-		}
-		else {
-			console.log('Found existing character!');
-			$state.go('main.status');
-		}
 	}
 ]);

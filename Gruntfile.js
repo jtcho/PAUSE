@@ -48,12 +48,13 @@ module.exports = function(grunt) {
         },
         jshint: {
             options: {
-                jshintrc: '.jshintrc',
+                jshintrc: '.jshintrc'
             },
             all: [
                 'app/**/*.js',
-                '!app/bower_components/**'
-            ]
+                '!app/bower_components/**/*.js',
+                '!app/bower_components/animate.css/*.js'
+            ],
         }
     });
 

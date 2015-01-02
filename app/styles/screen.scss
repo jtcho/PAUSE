@@ -2,7 +2,10 @@
 
 //VARIABLES
 $bodyColor: #59a3a9;
+$h1Color: #b2d8dc;
+$h2Color: #a9becc;
 $screenColor: #e6f6f7;
+$screenColorRGBA: rgba(49, 71, 72, 0.0);
 
 //STYLES
 
@@ -15,12 +18,19 @@ html, body {
     width: 100%;
     height: 100%;
     background-color: $bodyColor;
+    margin: 0;
+}
+
+body {
+    background-image: url('../assets/images/starryNightFull.gif');
+    background-size: cover;
+    background-repeat:no-repeat;
 }
 
 
 h1, h2, h3, h4, h5, h6, li {
     font-family: 'Joystix', sans-serif;
-    color: #fd982b;
+    color: $h1Color;
 }
 
 h1 {
@@ -76,7 +86,7 @@ h4 {
 
 .screen-container {
     width: 100%;
-    background-color: $screenColor;
+    background-color: $screenColorRGBA;
     position:absolute;
     top: 50%;
     left: 50%;
@@ -180,7 +190,7 @@ span{
     width: 10px;
     height: 20px;
     margin-left:5px;
-    background-color:#fcb05e;
+    background-color:#576b76;
     display:inline-block;
     -webkit-animation: blink 1s infinite;
 }
@@ -194,12 +204,13 @@ span{
     font-family: 'Joystix';
     font-size: 4em;
     width: 10em;
-    color:#fd982b;
+    color:$h2Color;
     text-align:center;
     margin: 0 auto;
-    background-color: $screenColor;
+    background-color: rgba(0,0,0,0);
     border: none;
     border-bottom-style: solid;
+    border-color: $h2Color;
 }
 
 .input-name:focus {
@@ -209,14 +220,14 @@ span{
 .console-name {
     width: 93%; 
     margin: 20px auto; 
-    background-color: #fbd1a4;
-    border: 5px solid #fcb05e;
-    box-shadow: 0 0 0 5px #fec17f inset;
+    background-color: #e6f6f7;
+    border: 5px solid #576b76;
+    box-shadow: 0 0 0 5px #a9bfcc inset;
     -webkit-animation: fadein 2s forwards;
     opacity:0;
 
     h4 {
-        color: #e0831f;
+        color: #576b76;
     }
 }
 
@@ -227,7 +238,7 @@ span{
 @-webkit-keyframes type{ 
     to { width: 32em; } 
 } 
-
+    
 @-webkit-keyframes blink{
     to{opacity: .0;}
 }
@@ -235,3 +246,12 @@ span{
 @-webkit-keyframes fadein {
     100%{opacity: 1;}
 }
+
+/*
+ *
+ */
+
+ .screen-animate.ng-enter, .screen-animate.ng-leave {
+
+ }
+
