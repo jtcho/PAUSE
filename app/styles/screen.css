@@ -40,7 +40,7 @@ h4 {
  * MAIN.HTML
  */
 .time {
-  position: relative;
+  position: absolute;
   display: inline-block;
   top: -50px;
   left: 30%; }
@@ -48,10 +48,10 @@ h4 {
     color: #c7f3f7; }
 
 .date {
-  position: relative;
+  position: absolute;
   display: inline-block;
   top: -50px;
-  left: 54%; }
+  right: 30%; }
   .date h4 {
     color: #c7f3f7; }
 
