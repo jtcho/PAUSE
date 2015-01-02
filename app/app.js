@@ -20,13 +20,26 @@ angular.module('pauseApp', [
         controller: 'MainCtrl',
         url: ''
     })
-    .state('main.newCharacter', {
-        templateUrl: 'views/newcharacter.html',
+    /*
+     * CHARACTER CREATION STATES
+     */
+    .state('main.newcharacter', {
+        templateUrl: 'views/character_creation/new_name.html',
         url: '',
         controller: function($scope) {
 
         }
     })
+    .state('main.newgender', {
+        templateUrl: 'views/character_creation/new_gender.html',
+        url: '',
+        controller: function($scope) {
+
+        }
+    })
+    /*
+     * MAIN STATES
+     */
     .state('main.status', {
         // url: '/status', //Note that these urls don't actually show up in browser.
         templateUrl: 'views/status.html',

@@ -71,9 +71,6 @@ h4 {
 /*
  * ANIMATIONS
  */
-@-webkit-keyframes type {
-  to {
-    width: 32em; } }
 @-webkit-keyframes blink {
   to {
     opacity: .0; } }

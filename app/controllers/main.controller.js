@@ -1,12 +1,13 @@
 'use strict';
 
 angular.module('pauseApp')
-.controller('MainCtrl', ['$rootScope', '$scope', 'localStorageService', '$state', '$location', 
-	function($rootScope, $scope, localStorageService, $state, $location) {
+.controller('MainCtrl', ['$rootScope', '$scope', 'localStorageService', '$state', 
+	function($rootScope, $scope, localStorageService, $state) {
 
 	    //Load previous data.
 		$rootScope.data = localStorageService.get('data');
 
+		//If we have already existing data, skip character creation.
 		if ($rootScope.data) {
 			$state.go('main.status', [], {	location: false });	
 			//location: false
@@ -14,7 +15,7 @@ angular.module('pauseApp')
 		}
 
 		//Bind rootScope to local storage.
-		localStorageService.bind($rootScope, 'data');
+		// localStorageService.bind($rootScope, 'data');
 
 		//Set up date to be used in application.
 		$scope.dt = new Date();

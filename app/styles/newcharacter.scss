@@ -6,15 +6,27 @@ $screenColor: #e6f6f7;
 $screenColorRGBA: rgba(49, 71, 72, 0.0);
 
 /*
- * NEWCHARACTER.HTML
+ * NEWNAME.HTML
  */
 
 .typed {
     white-space: nowrap;
     overflow: hidden;
     width: 0;
-    -webkit-animation: type 3s 2s steps(60, end) forwards; 
+    -webkit-animation: type 3s 1s steps(60, end) forwards; 
     display:inline-block;
+}
+
+.typed2 {
+    -webkit-animation: type2 3s 1s steps(60, end) forwards;
+}
+
+@-webkit-keyframes type { 
+    to { width: 32em; } 
+}
+
+@-webkit-keyframes type2 {
+    to { width: 43em; }
 }
 
 span{
@@ -60,4 +72,27 @@ span{
     h4 {
         color: #576b76;
     }
+}
+
+.gender-picker {
+    width:50%;
+    height: 150px; 
+    margin: 30px auto;
+}
+
+.gender-symbol {
+    width: 145px;
+    height: 150px;
+    background-repeat:no-repeat;
+    background-position: center;
+    opacity: 0.6;
+}
+
+.gender-symbol:hover {
+    opacity: 1.0;
+}
+
+.grid-block {
+    display: inline-block;
+    vertical-align: top;
 }
