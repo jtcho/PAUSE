@@ -1,0 +1,24 @@
+<link rel="stylesheet" href="styles/newcharacter.css">
+
+<div class="animate-screen">
+<div class="container">
+	<h2 class="text-center sheen">What's Your Birthday?</h2>
+</div>
+
+<div class="console-name">
+	<div class="console-name-inner">
+		<h4 class="typed typed2" style="margin: 15px 10px 10px 10px; font-size: 1.3em; opacity: 0">>Cool! :) Just a couple more questions...</h4>
+	</div>
+</div>
+
+<div style="width: 100%; height:100px;" class="text-center">
+	<form name ="birthdayForm" class="form-name" ng-controller="NewBirthdayCtrl" style="display:inline-block; vertical-align:middle;">
+		<input id="birthdayInput" class="input-birthday" type="date" ng-model="value" placeholder="01/01/2000" min="2000-01-01" max="2000-12-31" required/>
+	</form>
+
+	<svg height="20" width="20" class="rightarrow">
+		<polygon points="1,1 1,20 20,10" style="fill:#b2d8dc;"/>
+	</svg>
+</div>
+
+</div>

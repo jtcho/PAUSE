@@ -40,6 +40,31 @@ angular.module('pauseApp')
 	};
 
 }])
+.controller('NewBirthdayCtrl', ['$rootScope', '$scope', '$state', function($rootScope, $scope, $state) {
+
+	var keys = {};
+	var input = angular.element('#birthdayInput');
+
+	//On alt + down, prevent calendar dialog from showing.
+	input.keydown(function(e) {
+		keys[e.which] = true;
+
+		if (keys[18] && keys[40])
+			e.preventDefault();
+	});
+	//
+	input.keyup(function(e) {
+		delete keys[e.which];
+	})
+
+	//
+	$scope.value = new Date(2000, 0, 1);
+
+	$scope.onSubmit = function() {
+		alert($scope.value);
+	};
+
+}])
 ;
 
 /*

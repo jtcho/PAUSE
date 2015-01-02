@@ -34,11 +34,9 @@ angular.module('pauseApp', [
         controller: 'NewGenderCtrl'
     })
     .state('main.newbirthday', {
-        template: '',
+        templateUrl: 'views/character_creation/new_birthday.html',
         url: '',
-        controller: function() {
-            
-        }
+        controller: 'NewBirthdayCtrl'
     })
     /*
      * MAIN STATES

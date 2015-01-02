@@ -81,3 +81,48 @@ span {
 .grid-block {
   display: inline-block;
   vertical-align: top; }
+
+input[type=date]::-webkit-inner-spin-button,
+input[type=date]::-webkit-calendar-picker-indicator {
+  -webkit-appearance: none;
+  display: none; }
+
+::-webkit-datetime-edit-text {
+  opacity: 0; }
+
+input[type=date]::-webkit-datetime-edit-day-field,
+input[type=date]::-webkit-datetime-edit-month-field {
+  display: inline-block;
+  posiiton: relative; }
+
+input[type=date]::-webkit-datetime-edit-month-field {
+  margin-left: 40px; }
+
+input[type=date]::-webkit-datetime-edit-year-field {
+  display: none; }
+
+.input-birthday {
+  font-family: 'Joystix';
+  font-size: 4em;
+  width: 6em;
+  color: #a9becc;
+  text-align: center;
+  margin: 0 auto;
+  background-color: transparent;
+  border-style: solid;
+  border-width: 5px;
+  border-color: #a9becc; }
+
+.input-birthday:focus {
+  outline: 0; }
+
+.rightarrow {
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 20px;
+  position: relative;
+  opacity: 0.6;
+  cursor: pointer; }
+
+.rightarrow:hover {
+  opacity: 1.0; }
