@@ -1,6 +1,7 @@
 'use strict';
 
 angular.module('pauseApp')
+//CONTROLLER FOR CHOOSING NAME PAGE
 .controller('NewNameCtrl', ['$rootScope', '$scope', '$state', function($rootScope, $scope, $state) {
 
 	/*
@@ -22,8 +23,31 @@ angular.module('pauseApp')
 		transitionTo($state, 'main.newgender');
 	};
 
-}]);
+}])
+//CONTROLLER FOR CHOOSING GENDER PAGE
+.controller('NewGenderCtrl', ['$rootScope', '$scope', '$state', function($rootScope, $scope, $state) {
 
+	/*
+	 * Function: pickGender
+	 * --------------------
+	 * Invoked when the user clicks a gender button.
+	 */
+	$scope.pickGender = function(gender) {
+
+		$rootScope.data.gender = gender;
+		transitionTo($state, 'main.newbirthday');
+
+	};
+
+}])
+;
+
+/*
+ * Function: transitionTo
+ * ----------------------
+ * Transitions the SPA from its current state to the next,
+ * fading out all the currently loaded elements in the ui-view first.
+ */
 var transitionTo = function($state, nextState) {
 
 	angular.element('.animate-screen').animate({

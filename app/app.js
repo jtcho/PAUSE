@@ -26,15 +26,18 @@ angular.module('pauseApp', [
     .state('main.newcharacter', {
         templateUrl: 'views/character_creation/new_name.html',
         url: '',
-        controller: function($scope) {
-
-        }
+        controller: 'NewNameCtrl'
     })
     .state('main.newgender', {
         templateUrl: 'views/character_creation/new_gender.html',
         url: '',
-        controller: function($scope) {
-
+        controller: 'NewGenderCtrl'
+    })
+    .state('main.newbirthday', {
+        template: '',
+        url: '',
+        controller: function() {
+            
         }
     })
     /*

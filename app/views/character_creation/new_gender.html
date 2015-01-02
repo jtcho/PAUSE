@@ -11,15 +11,23 @@
 	</div>
 </div>
 
-<div class="gender-picker">
+<div class="gender-picker text-center">
 	<div class="grid-block gender-symbol" style="
-				background-image:url('../assets/images/male.png');
-				">
+				background-image:url('../assets/images/male.png');"
+				ng-click="pickGender(1)"
+				>
 	</div><div class="grid-block" style="width:10%; height: 150px;">
 
 	</div><div class="grid-block gender-symbol" style="
-				background-image:url('../assets/images/female.png');
-	"></div>
+				background-image:url('../assets/images/female.png');"
+				ng-click="pickGender(2)"
+	>
+	</div><div class="grid-block" style="width:10%; height: 150px;">
+
+	</div><div class="grid-block gender-symbol" style="
+				background-image:url('../assets/images/genderneutral.png');"
+				ng-click="pickGender(3)"
+	>
 </div>
 
 </div>
