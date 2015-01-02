@@ -30,9 +30,19 @@ h3 {
   margin: 20px 0 0 0; }
 
 h4 {
-  color: #fcb05e;
+  color: #c7d7f7;
   font-size: 1.5em;
   margin: 20px 0 0 0; }
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  text-align: left; }
+
+li {
+  font-size: 1.3em;
+  color: #b2d8dc; }
 
 .text-center {
   text-align: center; }
@@ -91,3 +101,6 @@ h4 {
     background-position: 0 0; } }
 .sheen:hover {
   color: #b2d8dc; }
+
+.sheen-image {
+  -webkit-background-clip: content-box; }

@@ -4,6 +4,8 @@
 $bodyColor: #59a3a9;
 $h1Color: #b2d8dc;
 $h2Color: #a9becc;
+$h4Color: #c7d7f7;
+$liColor: #b2d8dc;
 $screenColor: #e6f6f7;
 $screenColorRGBA: rgba(49, 71, 72, 0.0);
 
@@ -50,9 +52,22 @@ h3 {
 }
 
 h4 {
-    color: #fcb05e;
+    color: $h4Color;
     font-size: 1.5em;
     margin: 20px 0 0 0;
+}
+
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+}
+
+li {
+    font-size: 1.3em;
+    color: $liColor;
 }
 
 .text-center {
@@ -134,5 +149,9 @@ h4 {
 
 .sheen:hover {
     color: rgba(178, 216, 220, 1.0);
+}
+
+.sheen-image {
+    -webkit-background-clip: content-box;
 }
 

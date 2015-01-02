@@ -4,7 +4,7 @@
 
     <h1 class="text-center sheen">{{data.name}}</h1>
 
-    <h4 class="text-center">Level {{data.level}} Programmer</h4>
+    <h4 class="text-center">Level {{data.level}} {{data.className}}</h4>
 
     <div class="expbar_fill" style="
         left: -{{204/2 * (1-data.expPercent)}}px;
@@ -22,8 +22,8 @@
 	    	</div>
     	</div><div class="right" style="">
     		<ul>
-    			<li>Birthday: 10/9</li>
-    			<li>Alignment: Lawful Good</li>
+    			<li>Birthday: {{birthdayString}}</li>
+    			<!-- <li>Alignment: Lawful Good</li> -->
     			<li>Status:</li>
     		</ul>
     	</div>

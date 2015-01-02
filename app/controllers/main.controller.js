@@ -1,21 +1,17 @@
 'use strict';
 
 angular.module('pauseApp')
-.controller('MainCtrl', ['$rootScope', '$scope', 'localStorageService', '$state', 
-	function($rootScope, $scope, localStorageService, $state) {
-
-	    //Load previous data.
-		$rootScope.data = localStorageService.get('data');
+.controller('MainCtrl', ['$scope', 'localStorageService', '$state', 'storageLiason',
+	function($scope, localStorageService, $state, storageLiason) {
 
 		//If we have already existing data, skip character creation.
-		if ($rootScope.data) {
+		if (storageLiason.isValid()) {
 			$state.go('main.status', [], {	location: false });	
 			//location: false
 			//Avoids annoying issue where state change cancels any pending url navigation.
 		}
-
-		//Bind rootScope to local storage.
-		// localStorageService.bind($rootScope, 'data');
+		else
+			storageLiason.reset();
 
 		//Set up date to be used in application.
 		$scope.dt = new Date();

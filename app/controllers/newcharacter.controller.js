@@ -2,46 +2,45 @@
 
 angular.module('pauseApp')
 //CONTROLLER FOR CHOOSING NAME PAGE
-.controller('NewNameCtrl', ['$rootScope', '$scope', '$state', function($rootScope, $scope, $state) {
+.controller('NewNameCtrl', ['$scope', '$state', 'storageLiason',
+	function($scope, $state, storageLiason) {
+		/*
+		 * Function: onSubmit
+		 * ------------------
+		 * Invoked when the user enters the name form.
+		 */
+		$scope.onSubmit = function() {
 
-	/*
-	 * Function: onSubmit
-	 * ------------------
-	 * Invoked when the user enters the name form.
-	 */
-	$scope.onSubmit = function() {
+			//Don't accept empty names or non-alphabetical.
+			if (! $scope.characterName || !/[a-zA-Z]+/.test($scope.characterName) || $scope.characterName.length > 10)
+				return;
 
-		//Don't accept empty names or non-alphabetical.
-		if (! $scope.characterName || !/[a-zA-Z]+/.test($scope.characterName) || $scope.characterName.length > 10)
-			return;
-
-		$rootScope.data = {};
-		$rootScope.data.level = 1;
-		$rootScope.data.expPercent = 0;
-		$rootScope.data.name = $scope.characterName.toUpperCase();
-
-		transitionTo($state, 'main.newgender');
-	};
-
-}])
+			storageLiason.setLevel(1);
+			storageLiason.setExpPercent(0);
+			storageLiason.setName($scope.characterName.toUpperCase());
+			transitionTo($state, 'main.newgender');
+		};
+	}
+])
 //CONTROLLER FOR CHOOSING GENDER PAGE
-.controller('NewGenderCtrl', ['$rootScope', '$scope', '$state', function($rootScope, $scope, $state) {
+.controller('NewGenderCtrl', ['$scope', '$state', 'storageLiason', 
+	function($scope, $state, storageLiason) {
 
-	/*
-	 * Function: pickGender
-	 * --------------------
-	 * Invoked when the user clicks a gender button.
-	 */
-	$scope.pickGender = function(gender) {
+		/*
+		 * Function: pickGender
+		 * --------------------
+		 * Invoked when the user clicks a gender button.
+		 */
+		$scope.pickGender = function(gender) {
 
-		$rootScope.data.gender = gender;
-		transitionTo($state, 'main.newbirthday');
+			storageLiason.setGender(gender);
+			transitionTo($state, 'main.newbirthday');
 
-	};
-
-}])
-.controller('NewBirthdayCtrl', ['$rootScope', '$scope', '$state', '$filter', 
-function($rootScope, $scope, $state, $filter) {
+		};
+	}
+])
+.controller('NewBirthdayCtrl', ['$scope', '$state', '$filter', 'storageLiason',
+function($scope, $state, $filter, storageLiason) {
 
 	var keys = {};
 	var input = angular.element('#birthdayInput');
@@ -64,25 +63,31 @@ function($rootScope, $scope, $state, $filter) {
 	//
 	$scope.value = new Date(2000, 0, 1);
 
+	/*
+	 * Function: onSubmit
+	 * ------------------
+	 * Invoked when the user submits a birthdate.
+	 */
 	$scope.onSubmit = function() {
-		$rootScope.data.birthday = $scope.value;
+		storageLiason.setBirthday($scope.value);
 		transitionTo($state, 'main.newclass');
 	};
 
 }
 ])
-.controller('NewClassCtrl', ['$rootScope', '$scope', '$state',
-	function($rootScope, $scope, $state) {
+.controller('NewClassCtrl', ['$scope', '$state', 'storageLiason',
+	function($scope, $state, storageLiason) {
 
-		$scope.zodiac = zodiacSign($rootScope.data.birthday);
+		$scope.zodiac = zodiacSign(storageLiason.data.birthday);
 		$scope.article = isVowel($scope.zodiac.charAt(0)) ? 'An' : 'A';
 		$scope.onSubmit = function() {
 
 			if (! $scope.className || !/[a-zA-Z]+/.test($scope.className) || $scope.className.length > 15)
 				return;
 
-			$rootScope.data.className = $scope.className;
-			transitionTo($state, 'main.newalignment');
+			storageLiason.setClassName($scope.className.toUpperCase());
+			storageLiason.setValid(true);
+			transitionTo($state, 'main.status');
 		};
 
 	}
