@@ -26,6 +26,8 @@ angular.module('pauseApp')
 .controller('NewGenderCtrl', ['$scope', '$state', 'storageLiason', 
 	function($scope, $state, storageLiason) {
 
+		$scope.name = storageLiason.data.name;
+
 		/*
 		 * Function: pickGender
 		 * --------------------

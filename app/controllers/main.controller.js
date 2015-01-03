@@ -15,9 +15,10 @@ angular.module('pauseApp')
 
 		//Set up date to be used in application.
 		$scope.dt = new Date();
-				//Update every second.
-	            setInterval(function() {
-	                $scope.dt = new Date();
-	            }, 1000);
+		//Update every second.
+        setInterval(function() {
+            $scope.dt = Date.now();
+            $scope.$apply();
+        }, 1000);
 	}
 ]);

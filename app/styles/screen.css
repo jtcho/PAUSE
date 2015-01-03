@@ -70,7 +70,7 @@ li {
   width: 100%;
   background-color: rgba(49, 71, 72, 0);
   position: absolute;
-  top: 50%;
+  top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
   margin: 0 auto; }

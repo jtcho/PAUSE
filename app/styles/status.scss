@@ -25,7 +25,7 @@
 }
 
 .left {
-    width:30%;
+    width:40%;
     height:100%;
     margin: 0;
     display:inline-block;
@@ -59,4 +59,43 @@
     text-align: center;
     font-size: 2em;
     font-family: 'Joystix';
+}
+
+.attributes li {
+    display:inline;
+}
+
+.attribute {
+    display:inline-block;
+    width: 95px; 
+    height:13px; 
+    // background-color:#4bc3ce;
+    border-radius: 10px;
+    border: 3px #78d2da solid;
+    vertical-align:middle;
+    margin: 0 5px 5px 5px;
+}
+
+.attribute-fill {
+    background-color:#4bc3ce;
+    width:0%;
+    height:100%;
+    -webkit-transition: width 3s;
+}
+
+.gender-symbol {
+    width: 145px;
+    height: 150px;
+    background-repeat:no-repeat;
+    background-position: center;
+    opacity: 0.6;
+}
+
+.gender-symbol:hover {
+    opacity: 1.0;
+}
+
+.grid-block {
+    display: inline-block;
+    vertical-align: top;
 }

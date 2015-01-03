@@ -4,28 +4,32 @@
 
     <h1 class="text-center sheen">{{data.name}}</h1>
 
-    <h4 class="text-center">Level {{data.level}} {{data.className}}</h4>
+    <h4 class="text-center" style="margin-top:0px;">Level {{data.level}} {{data.className}}</h4>
 
     <div class="expbar_fill" style="
         left: -{{204/2 * (1-data.expPercent)}}px;
         width: {{204*data.expPercent}}px;
+        margin-bottom:50px;
         ">
         <div class="expbar" tooltip tooltip-content="{{data.expPercent*100}}"></div>
     </div>
 
     <div style="width: 80%; height: 300px; margin: 0 auto;">
     	<!-- Filler Div. Yes. -->
-    	<div style="width:10%; display:inline-block; height: 100%; vertical-align:top;">
-    	</div><div class="left" style="">
+    	<div style="width:0%; display:inline-block; height: 100%; vertical-align:top;">
+    	</div><div class="left text-center" style="">
 	    	<div class="avatar-card" >
 	    		<div class="avatar"></div>
 	    	</div>
+            <div class="grid-block gender-symbol" style="
+                background-image:url('../assets/images/gender_symbols/{{data.gender}}.png');"> </div>
     	</div><div class="right" style="">
     		<ul>
     			<li>Birthday: {{birthdayString}}</li>
-    			<!-- <li>Alignment: Lawful Good</li> -->
-    			<li>Status:</li>
+    			<li>Alignment: TBD</li>
+    			<!-- <li>Status:</li> -->
     		</ul>
+            <attributes></attributes>
     	</div>
     </div>
 
