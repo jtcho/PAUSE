@@ -38,7 +38,8 @@ angular.module('pauseApp')
 	    	},
 	        content: {
 	        	text: function(event, api) {
-	        		return Math.round(angular.element(this).attr('tooltip-content'))+'%' || '';
+	        		// return Math.round(angular.element(this).attr('tooltip-content'))+'%' || '';
+	        		return angular.element(this).attr('tooltip-content') || '';
 	        	}
 	        },
 	        position: {

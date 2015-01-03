@@ -33,6 +33,13 @@
   100% {
     width: 45em;
     opacity: 1.0; } }
+.noflash {
+  opacity: 0;
+  -webkit-animation: noflash 3s forwards; }
+
+@-webkit-keyframes noflash {
+  5%, 100% {
+    opacity: 1; } }
 span {
   width: 10px;
   height: 20px;

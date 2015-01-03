@@ -7,15 +7,14 @@ angular.module('pauseApp')
 			restrict: 'E',
 			templateUrl: 'views/attributes.directive.html',
 			link: function(scope) {
-				console.log('Character Attributes directive link function called.');
-
+				scope.Math = Math;
 				scope.attributes = [
-					['STR', 0],
-					['INT', 0],
-					['DEX', 0],
-					['WIS', 0],
-					['LCK', 0],
-					['CHA', 0]
+					['STR', 0, 'Strength: '],
+					['INT', 0, 'Intelligence: '],
+					['DEX', 0, 'Dexterity: '],
+					['WIS', 0, 'Wisdom: '],
+					['LCK', 0, 'Luck: '],
+					['CHA', 0, 'Charisma: ']
 				];
 
 				scope.widths = [];
