@@ -17,8 +17,8 @@
     <div style="width: 80%; height: 300px; margin: 0 auto;">
     	<!-- Filler Div. Yes. -->
     	<div style="width:0%; display:inline-block; height: 100%; vertical-align:top;">
-    	</div><div class="left text-center" style="">
-	    	<div class="avatar-card" >
+    	</div><div class="left text-center" style="position:relative; top:20%; left:-5%;">
+	    	<div class="avatar-card" style="">
 	    		<div class="avatar"></div>
 	    	</div>
             <div class="grid-block gender-symbol" style="
@@ -30,6 +30,20 @@
     			<!-- <li>Status:</li> -->
     		</ul>
             <attributes></attributes>
+            <div class="todos">
+                <div class="todos-inner">
+                    <h4 class="sheen text-center" style="margin: 10px 0 0 10px;">quest journal</h4>
+                    <ul>
+                        <li ng-repeat="todo in todos">
+                            <div style="width: 10px; height: 10px; background-color:#fff; display:inline-block;"></div>
+                            <textarea rows="1" style="resize:none; width:90%; overflow:hidden; display:inline-block; vertical-align: middle;" ng-keyup="autoGrow($event)" ng-model="todo[1]"></textarea>
+                            <!-- <form class="form-todo" ng-submit="onSubmitTodo(todo, $index)">
+                                <input type="text" class="input-todo" ng-model="todo[1]">
+                            </form> -->
+                        </li>
+                    </ul>
+                </div>
+            </div>
     	</div>
     </div>
 

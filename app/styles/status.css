@@ -35,17 +35,12 @@
   vertical-align: top; }
 
 .avatar-card {
-  background-image: url("../assets/images/avatar_card.png");
-  background-repeat: no-repeat;
-  margin: 0 auto;
-  width: 120px;
-  height: 185px; }
-
-.avatar {
-  width: 100%;
-  height: 100%;
-  background-image: url("../assets/images/avatar_test.png");
-  background-repeat: no-repeat; }
+  background-color: rgba(181, 203, 219, 0.5);
+  margin: 0 10px;
+  width: 70%;
+  height: 200px;
+  border-radius: 5px;
+  display: inline-block; }
 
 .tooltip-center .qtip-content {
   text-align: center;
@@ -66,15 +61,17 @@
 
 .attribute-fill {
   background-color: #4bc3ce;
+  border-radius: 10px;
   width: 0%;
   height: 100%;
   -webkit-transition: width 3s; }
 
 .gender-symbol {
-  width: 145px;
-  height: 150px;
+  width: 47px;
+  height: 50px;
   background-repeat: no-repeat;
   background-position: center;
+  background-size: contain;
   opacity: 0.6; }
 
 .gender-symbol:hover {
@@ -82,4 +79,58 @@
 
 .grid-block {
   display: inline-block;
-  vertical-align: top; }
+  vertical-align: middle; }
+
+.todos {
+  background-color: rgba(230, 246, 247, 0.1);
+  border: 5px solid #576b76;
+  opacity: 0;
+  -webkit-animation: fadein 4s forwards;
+  width: 100%;
+  height: 280px;
+  margin-top: 15px; }
+
+@-webkit-keyframes fadein {
+  50%, 100% {
+    opacity: 1; } }
+.todos-inner {
+  border: 5px solid #a9bfcc;
+  width: 97%;
+  height: 271px;
+  overflow: scroll; }
+  .todos-inner ul {
+    text-indent: -5px;
+    margin: 10px 10px 10px 10px; }
+  .todos-inner li {
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    font-size: 1.1em;
+    color: #b2d8dc;
+    margin: 5px; }
+  .todos-inner .input-todo {
+    font-family: 'Joystix';
+    font-size: 1em;
+    color: #b2d8dc;
+    background-color: transparent;
+    border: none;
+    border-color: #b2d8dc; }
+  .todos-inner .input-todo:focus {
+    outline: 0; }
+  .todos-inner textarea {
+    font-family: 'Joystix';
+    font-size: 1em;
+    color: #b2d8dc;
+    background-color: transparent;
+    border: none; }
+  .todos-inner textarea:focus {
+    outline: 0; }
+
+::-webkit-scrollbar {
+  width: 13px;
+  height: 0; }
+
+::-webkit-scrollbar-track {
+  background-color: #d6eaeb; }
+
+::-webkit-scrollbar-thumb {
+  background-color: #89a0a2; }
