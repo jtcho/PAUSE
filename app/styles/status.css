@@ -106,7 +106,8 @@
     text-rendering: optimizeLegibility;
     font-size: 1.1em;
     color: #b2d8dc;
-    margin: 5px; }
+    margin: 5px;
+    width: 100%; }
   .todos-inner .input-todo {
     font-family: 'Joystix';
     font-size: 1em;
@@ -116,13 +117,18 @@
     border-color: #b2d8dc; }
   .todos-inner .input-todo:focus {
     outline: 0; }
-  .todos-inner textarea {
+  .todos-inner .textarea {
     font-family: 'Joystix';
     font-size: 1em;
     color: #b2d8dc;
     background-color: transparent;
-    border: none; }
-  .todos-inner textarea:focus {
+    border: none;
+    display: inline-block;
+    vertical-align: middle;
+    min-height: 10px;
+    width: 90%;
+    padding-left: 5px; }
+  .todos-inner .textarea:focus {
     outline: 0; }
 
 ::-webkit-scrollbar {

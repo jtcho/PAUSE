@@ -139,6 +139,7 @@
         // color: #1f3b51;
         color: #b2d8dc;
         margin: 5px;
+        width:100%;
     }
 
     .input-todo {
@@ -155,15 +156,20 @@
         outline: 0;
     }
 
-    textarea {
+    .textarea {
         font-family: 'Joystix';
         font-size: 1em;
         color:#b2d8dc;
         background-color: rgba(0,0,0,0);
         border: none;
+        display:inline-block; 
+        vertical-align: middle;
+        min-height: 10px;
+        width:90%;
+        padding-left:5px;
     }
 
-    textarea:focus {
+    .textarea:focus {
         outline: 0;
     }
 

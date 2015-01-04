@@ -2,20 +2,24 @@
 
 angular.module('pauseApp')
 //Status Screen Angular Controller
-.controller('StatusCtrl', ['$scope', 'localStorageService', 'storageLiason',
-	function($scope, localStorageService, storageLiason) {
+.controller('StatusCtrl', ['$scope', '$timeout', 'localStorageService', 'storageLiason',
+	function($scope, $timeout, localStorageService, storageLiason) {
 
-		//
+		//Fadein effect.
 		angular.element('.animate-screen').css('opacity', 0.0);
 		angular.element('.animate-screen').animate({
 				opacity: 1,
 				'-webkit-animation-fill-mode': 'forwards'
 			}, 1000, function() {});
 
+		//Store a read-only copy of the data.
 		$scope.data = storageLiason.data;
-
 		var birthday = new Date($scope.data.birthday);
 		$scope.birthdayString = (birthday.getMonth()+1) + '/' + birthday.getDate();
+
+		////////////////
+		// TODO STUFF //
+		////////////////
 
 		//The next key for a new todo element.
 		$scope.nextKey = 2;
@@ -28,23 +32,19 @@ angular.module('pauseApp')
 
 		var todoForm = angular.element('.todos-inner ul');
 
-		$scope.autoGrow = function(event) {
-			var oField = angular.element(event.target);
-			console.log(oField.prop('scrollHeight'));
-			// var scrollHeight = oField.prop('scrollHeight');
-			// var clientHeight = oField.prop('clientHeight');
-			// if (scrollHeight > clientHeight) {
-   //  			oField.css('height', scrollHeight + 'px');
-  	// 		}
-  			oField.height(1).height(oField.prop('scrollHeight') );
-		};
-
-		var previousInput = function(active) {
-			return active.parent().parent().prev().find('form').find('input');
-		};
-
-		var nextInput = function(active) {
-			return active.parent().parent().next().find('form').find('input');
+		/*
+		 * Function: setFocusTo
+		 * --------------------
+		 * Called by the todo list handlers.
+		 * Shifts focus to the todo item given by the specific index
+		 * in the $scope.todos array.
+		 * Wrapped in a timeout call to avoid calling $digest during
+		 * an already running digest cycle.
+		 */
+		var setFocusTo = function($index) {
+			$timeout(function() {
+				todoForm.find('.textarea').eq($index).focus();
+			});
 		};
 
 		/*
@@ -56,53 +56,55 @@ angular.module('pauseApp')
 			//
 			var key = todoPair[0];
 			var todo = todoPair[1];
+			var active = angular.element(document.activeElement);
 
 			if (! todo) {
 				$scope.todos.splice($index, 1);
 
-				var active = angular.element(document.activeElement);
-
 				if ($index > 0)
-					previousInput(active).focus();
+					setFocusTo($index-1);
 				else
-					nextInput(active).focus();
+					setFocusTo($index+1);
 
-				if ($scope.todos.length === 0) {
+				if ($scope.todos.length === 0)
 					$scope.todos[0] = [$scope.nextKey++, ''];
-				}
 			}
 			else {
 				$scope.todos[$index] = [key, todo.toUpperCase()];
-				if ($scope.todos.length == $index + 1) {
-					$scope.todos.push([$scope.nextKey++, '']);
-				}
 
-				if ($index < $scope.todos.length-1) {
-					setTimeout(function() {	//Kind of cheap, not sure how to get a 'promise' to the third element.
-						var inputs = todoForm.find('form').find('input');
-						inputs.eq($index + 1).focus();
-					}, 500);
-				}
+				if ($scope.todos.length == $index + 1)
+					$scope.todos.push([$scope.nextKey++, '']);
+
+				if ($index < $scope.todos.length-1)
+					setFocusTo($index + 1);
 			}
 		};
 
 		/*
-		 * Binds up and down arrow keys to navigating the todo list.
+		 * Function: keyDown
+		 * -----------------
+		 * Binds up and down arrow keys to navigating the todo list,
+		 * and binds the enter key to submitting a todo.
 		 */
-		todoForm.keydown(function(e) {
-			//up38 right 39 down 40 left 37
-			var active = angular.element(document.activeElement);
+		$scope.keyDown = function(e, todo, $index) {
 
+			//ENTER
+			if (e.which == 13) {
+				$scope.onSubmitTodo(todo, $index);
+				e.preventDefault();
+			}
+			// //UP ARROW
 			if (e.which == 38) {
-				active.parent().parent().prev().find('form').find('input').focus();
+				setFocusTo($index - 1);
 				e.preventDefault();
 			}
+			// //DOWN ARROW
 			if (e.which == 40) {
-				active.parent().parent().next().find('form').find('input').focus();
+				setFocusTo($index + 1);
 				e.preventDefault();
 			}
 
-		});
+		};
 
 
 		// setInterval(function() {
@@ -116,29 +118,4 @@ angular.module('pauseApp')
 		// 	$scope.$apply();
 		// }, 15);
 	}
-])
-//Custom Directive for QTip2 Tooltips
-.directive('tooltip', function() {
-	return function(scope, element, attrs) {
-		element.qtip({
-	    	style: {
-	    		classes: 'qtip-dark tooltip-center'
-	    	},
-	        content: {
-	        	text: function(event, api) {
-	        		// return Math.round(angular.element(this).attr('tooltip-content'))+'%' || '';
-	        		return angular.element(this).attr('tooltip-content') || '';
-	        	}
-	        },
-	        position: {
-	        	target: 'mouse',
-	        	adjust: {
-	        		x:10,
-	        		y:20,
-	        		mouse: true
-	        	}
-	        }
-	 	});
-	};
-})
-;
+]);

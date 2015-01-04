@@ -36,7 +36,7 @@
                     <ul>
                         <li ng-repeat="todo in todos">
                             <div style="width: 10px; height: 10px; background-color:#fff; display:inline-block;"></div>
-                            <textarea rows="1" style="resize:none; width:90%; overflow:hidden; display:inline-block; vertical-align: middle;" ng-keyup="autoGrow($event)" ng-model="todo[1]"></textarea>
+                            <div contenteditable="true" class="textarea" ng-keydown="keyDown($event, todo, $index)" ng-model="todo[1]"></div>
                             <!-- <form class="form-todo" ng-submit="onSubmitTodo(todo, $index)">
                                 <input type="text" class="input-todo" ng-model="todo[1]">
                             </form> -->
