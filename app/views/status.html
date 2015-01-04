@@ -6,12 +6,9 @@
 
     <h4 class="text-center" style="margin-top:0px;">Level {{data.level}} {{data.className}}</h4>
 
-    <div class="expbar_fill" style="
-        left: -{{204/2 * (1-data.expPercent)}}px;
-        width: {{204*data.expPercent}}px;
-        margin-bottom:50px;
-        ">
+    <div class="expbar_outer">
         <div class="expbar" tooltip tooltip-content="{{data.expPercent*100}}"></div>
+        <div class="expbar_fill" style=""></div>
     </div>
 
     <div style="width: 80%; height: 300px; margin: 0 auto;">

@@ -105,9 +105,14 @@ angular.module('pauseApp')
 		 * Function: completeTodo
 		 * ----------------------
 		 */
-		$scope.completeTodo = function(e, todo, $index) {
+		$scope.completeTodo = function(e, todoPair, $index) {
 			var checkbox = angular.element(e.target);
-			// console.log(checkbox.parent());
+
+			var todo = todoPair[1];
+			if (todo) {
+				$scope.data.expPercent += 0.01 + Math.random()*0.1;
+			}
+
 			checkbox.parent().animate({
 				opacity: 0,
 				'webkit-animation-fill-mode': 'forwards'
