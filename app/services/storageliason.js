@@ -34,6 +34,10 @@ angular.module('pauseApp').factory('storageLiason', ['localStorageService',
                 this.data.className = newClassName;
                 this.sync();
             },
+            setTodos : function(todos) {
+                this.data.todos = todos;
+                this.sync();
+            },
             setValid : function(valid) {
                 this.data.valid = valid;
                 this.sync();

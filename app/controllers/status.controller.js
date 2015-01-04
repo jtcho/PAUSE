@@ -25,10 +25,11 @@ angular.module('pauseApp')
 		$scope.nextKey = 2;
 		//We define todos as pairs of unique keys and the corresponding todo message
 		//to avoid 'duplicate' errors with ng-repeat.
-		$scope.todos = [
+		$scope.todos = storageLiason.data.todos || [
 			[0, 'Add todos!'], 
 			[1, '']
 		];
+		storageLiason.setTodos($scope.todos);
 
 		var todoForm = angular.element('.todos-inner ul');
 
@@ -58,17 +59,8 @@ angular.module('pauseApp')
 			var todo = todoPair[1];
 			var active = angular.element(document.activeElement);
 
-			if (! todo) {
-				$scope.todos.splice($index, 1);
-
-				if ($index > 0)
-					setFocusTo($index-1);
-				else
-					setFocusTo($index+1);
-
-				if ($scope.todos.length === 0)
-					$scope.todos[0] = [$scope.nextKey++, ''];
-			}
+			if (! todo)
+				$scope.removeTodo($index);
 			else {
 				$scope.todos[$index] = [key, todo.toUpperCase()];
 
@@ -77,6 +69,8 @@ angular.module('pauseApp')
 
 				if ($index < $scope.todos.length-1)
 					setFocusTo($index + 1);
+
+				storageLiason.setTodos($scope.todos);
 			}
 		};
 
@@ -95,7 +89,8 @@ angular.module('pauseApp')
 			}
 			// //UP ARROW
 			if (e.which == 38) {
-				setFocusTo($index - 1);
+				if ($index > 0)
+					setFocusTo($index - 1);
 				e.preventDefault();
 			}
 			// //DOWN ARROW
@@ -104,6 +99,41 @@ angular.module('pauseApp')
 				e.preventDefault();
 			}
 
+		};
+
+		/*
+		 * Function: completeTodo
+		 * ----------------------
+		 */
+		$scope.completeTodo = function(e, todo, $index) {
+			var checkbox = angular.element(e.target);
+			// console.log(checkbox.parent());
+			checkbox.parent().animate({
+				opacity: 0,
+				'webkit-animation-fill-mode': 'forwards'
+			}, 500, function() {
+				checkbox.height(0);
+				$scope.removeTodo($index);
+			});
+		};
+
+		/*
+		 * Function: removeTodo
+		 * ----------------------
+		 */
+		$scope.removeTodo = function($index) {
+
+			$scope.todos.splice($index, 1);
+
+			if ($index > 0)
+				setFocusTo($index-1);
+			else
+				setFocusTo($index+1);
+
+			if ($scope.todos.length === 0)
+				$scope.todos[0] = [$scope.nextKey++, ''];
+
+			storageLiason.setTodos($scope.todos);
 		};
 
 

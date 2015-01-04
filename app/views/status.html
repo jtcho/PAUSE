@@ -25,8 +25,9 @@
                 background-image:url('../assets/images/gender_symbols/{{data.gender}}.png');"> </div>
     	</div><div class="right" style="">
     		<ul>
-    			<li>Birthday: {{birthdayString}}</li>
+                <li>Race: </li>
     			<li>Alignment: TBD</li>
+                <li>Birthday: {{birthdayString}}</li>
     			<!-- <li>Status:</li> -->
     		</ul>
             <attributes></attributes>
@@ -35,11 +36,8 @@
                     <h4 class="sheen text-center" style="margin: 10px 0 0 10px;">quest journal</h4>
                     <ul>
                         <li ng-repeat="todo in todos">
-                            <div style="width: 10px; height: 10px; background-color:#fff; display:inline-block;"></div>
-                            <div contenteditable="true" class="textarea" ng-keydown="keyDown($event, todo, $index)" ng-model="todo[1]"></div>
-                            <!-- <form class="form-todo" ng-submit="onSubmitTodo(todo, $index)">
-                                <input type="text" class="input-todo" ng-model="todo[1]">
-                            </form> -->
+                            <div class="checkbox" ng-click="completeTodo($event, todo, $index)"></div>
+                            <div spellcheck="false" contenteditable="true" class="textarea" ng-keydown="keyDown($event, todo, $index)" ng-model="todo[1]"></div>
                         </li>
                     </ul>
                 </div>

@@ -109,7 +109,7 @@
     background-color: rgba(230, 246, 247, 0.1);
     border: 5px solid #576b76;
     opacity: 0;
-    -webkit-animation: fadein 4s forwards;
+    -webkit-animation: fadein 2s forwards;
     width:100%; 
     height:280px; 
     margin-top: 15px;
@@ -142,18 +142,17 @@
         width:100%;
     }
 
-    .input-todo {
-        font-family: 'Joystix';
-        font-size: 1em;
-        color:#b2d8dc;
-        background-color: rgba(0,0,0,0);
-        border: none;
-        // border-bottom-style: dashed;
-        border-color: #b2d8dc;
+    .checkbox {
+        width: 10px; 
+        height: 10px; 
+        background-color:#fff; 
+        display:inline-block;
+        opacity: 0.6;
+        cursor:pointer;
     }
 
-    .input-todo:focus {
-        outline: 0;
+    .checkbox:hover {
+        opacity:0.9;
     }
 
     .textarea {
