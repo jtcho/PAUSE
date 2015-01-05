@@ -14,6 +14,11 @@ angular.module('pauseApp')
 
 		//Store a read-only copy of the data.
 		$scope.data = storageLiason.data;
+
+		//Apply style for gender symbol.
+		angular.element('.gender-symbol').css('background-image',
+			'url(\'../assets/images/gender_symbols/'+$scope.data.gender+'.png\')');
+
 		var birthday = new Date($scope.data.birthday);
 		$scope.birthdayString = (birthday.getMonth()+1) + '/' + birthday.getDate();
 
@@ -111,6 +116,10 @@ angular.module('pauseApp')
 			var todo = todoPair[1];
 			if (todo) {
 				$scope.data.expPercent += 0.01 + Math.random()*0.1;
+				if ($scope.data.expPercent > 1) {
+					$scope.data.expPercent -= 1.0;
+					$scope.data.level++;
+				}
 			}
 
 			checkbox.parent().animate({

@@ -1,0 +1,154 @@
+/*
+ * CUSTOM_TEMPLATE.SCSS
+ * --------------------
+ * Defines custom styles for a particular PAUSE theme.
+ * Should be included AFTER the default theme.
+ */
+
+//All variables should be modified and defined up here for
+//ease of use.
+//Background
+$bodyColor: #fff;
+$backgroundImage: '';
+//Fonts
+$defaultFont: '';
+$fallbackFontColor: #fff;
+$h1Color: #fff;
+$h2Color: #fff;
+$h3Color: #fff;
+$h4Color: #fff;
+$liColor: #fff;
+$timeColor: #fff;
+$dateColor: #fff;
+$sheenColor: rgba(0,0,0,0);
+$sheenHoverColor: rgba(0,0,0,0);
+//Screen
+$screenContainerColor: rgba(0,0,0,0);
+//Input Form (New Character/Settings)
+$inputFormFontColor: #fff;
+$inputFormFill: rgba(0,0,0,0);
+$consoleFill: #fff;
+$consoleOuterBorderColor: #fff;
+$consoleInnerBorderColor: #fff;
+$consoleTextColor: #fff;
+//Experience Bar
+$expbarGradient: -webkit-linear-gradient(right, #fff 0%, #fff);
+$expbarBorderColor: #fff;
+//Attributes
+$attributeBorderColor: #fff;
+$attributeFill: #fff;
+//Todos
+$todosFill: rgba(0,0,0,0);
+$todosBorderColor: #fff;
+$todosInnerBorderColor: #fff;
+$todosLiColor: #fff;
+$todosCheckboxFill: #fff;
+$todosFontColor: #fff;
+$todosFill: rgba(0,0,0,0);
+$todosTitleColor: #fff;
+$todosTitleHoverColor: #fff;
+//Scrollbar
+$scrollbarTrackFill: #fff;
+$scrollbarThumbFill: #fff;
+
+/*
+ * General Properties
+ */
+
+html, body {background-color: $bodyColor;}
+body {background-image:url($backgroundImage);}
+h1, h2, h3, h4, li, p, a {
+ 	font-family: $defaultFont, sans-serif;
+ 	color: $fallbackFontColor;
+}
+
+h1 {color: $h1Color;}
+h2 {color: $h2Color;}
+h3 {color: $h3Color;}
+h4 {color: $h4Color;}
+li {color: $liColor;}
+.time h4 {color: $timeColor;}
+.date h4 {color: $dateColor;}
+.screen-color {background-color: $screenContainerColor;}
+.sheen {
+	color: $sheenColor;
+}
+.sheen:hover {
+	color: $sheenHoverColor;
+}
+
+/*
+ * Character Selection States
+ */
+
+.input-name, .input-birthday {
+	background-color: $inputFormFill;
+	color: $inputFormFontColor;
+	border-color: $inputFormFontColor;
+}
+
+.console-name {
+
+	background-color: $consoleFill;
+	border-color: $consoleOuterBorderColor;
+	box-shadow-color: $consoleInnerBorderColor;
+
+	h4 {
+		color: $consoleTextColor;
+	}
+}
+
+/*
+ * Status Screen State
+ */
+
+ .expbar_fill {
+ 	background: $expbarGradient;
+ 	border-color: $expbarBorderColor;
+ }
+
+ .attribute {
+ 	border-color: $attributeBorderColor;
+ }
+
+ .attribute-fill {
+ 	background-color: $attributeFill;
+ }
+
+ .todos {
+ 	background-color: $todosFill;
+ 	border-color: $todosBorderColor;
+ }
+
+ .todos-inner {
+ 	border-color: $todosInnerBorderColor;
+
+ 	li {
+ 		color: $todosLiColor;
+ 	}
+
+ 	.checkbox {
+ 		background-color: $todosCheckboxFill;
+ 	}
+
+ 	.textarea {
+ 		color: $todosFontColor;
+ 		background-color: $todosFill;
+ 	}
+
+ 	h4 {
+ 		color: $todosTitleColor;
+ 	}
+
+ 	h4:hover {
+ 		color: $todosTitleHoverColor;
+ 	}
+ }
+
+ ::-webkit-scrollbar-track {
+ 	$background-color: $scrollbarTrackFill;
+ }
+
+ ::-webkit-scrollbar-thumb {
+ 	$background-color: $scrollbarThumbFill;
+ }

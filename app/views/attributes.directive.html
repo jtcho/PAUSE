@@ -1,6 +1,5 @@
 <!-- Attributes Directive for Status Screen -->
-<!-- <h3 class="sheen" style="opacity:0.8; margin-bottom:5px; position:relative;">stats</h3> -->
-<ul class="attributes" style="width: 312px; margin-top:15px;">
+<ul class="attributes">
 	<li ng-repeat="attribute in attributes">{{attribute[0]}}<div class="attribute" 
 		tooltip tooltip-content="{{attribute[2]}} {{Math.round(attribute[1])}}%">
 	<div class="attribute-fill" style="width: {{attribute[1]}}%;"></div>

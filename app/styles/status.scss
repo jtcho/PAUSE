@@ -2,6 +2,10 @@
  * STATUS.HTML
  */
 
+ .level_info {
+    margin-top:0px;
+ }
+
 .expbar_outer {
     position:relative;
     height:26px;
@@ -21,15 +25,15 @@
 
 .expbar_fill {
     position:absolute;
-    width:0px;
+    width:0;
     height: 12px;
     top:4px;
     left:6px;
     background: -webkit-linear-gradient(right, rgb(120,210,218) 20%, rgb(75, 195, 206));
-    -webkit-animation: 3s expandwidth infinite;
     border: none;
     border-top: 3px #4bc3ce solid;
     border-bottom: 3px #4bc3ce solid;
+    -webkit-transition: width 1s;
 }
 
 @-webkit-keyframes expandwidth {
@@ -37,8 +41,8 @@
 }
 
 .container {
-    width: 60%;
-    height: 100%;
+    width: 80%; 
+    height: 300px; 
     margin: 0 auto;
 }
 
@@ -48,6 +52,10 @@
     margin: 0;
     display:inline-block;
     vertical-align: top;
+
+    position:relative; 
+    top:20%;
+    left:-5%;
 }
 
 .right {
@@ -82,15 +90,19 @@
     font-family: 'Joystix';
 }
 
-.attributes li {
-    display:inline;
+.attributes {
+    width: 312px; 
+    margin-top:15px;
+
+    li {
+        display:inline;
+    }
 }
 
 .attribute {
     display:inline-block;
     width: 95px; 
     height:13px; 
-    // background-color:#4bc3ce;
     border-radius: 10px;
     border: 3px #78d2da solid;
     vertical-align:middle;
@@ -105,7 +117,7 @@
     -webkit-transition: width 3s;
 }
 
-.gender-symbol {
+.container .gender-symbol {
     width: 47px;
     height: 50px;
     background-repeat:no-repeat;
@@ -114,7 +126,7 @@
     opacity: 0.6;
 }
 
-.gender-symbol:hover {
+.container .gender-symbol:hover {
     opacity: 1.0;
 }
 
@@ -131,6 +143,10 @@
     width:100%; 
     height:280px; 
     margin-top: 15px;
+
+    h4 {
+        margin: 10px 0 0 10px;
+    }
 }
 
 @-webkit-keyframes fadein {
@@ -175,7 +191,7 @@
 
     .textarea {
         font-family: 'Joystix';
-        font-size: 1em;
+        font-size: 1.2em;
         color:#b2d8dc;
         background-color: rgba(0,0,0,0);
         border: none;

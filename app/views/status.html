@@ -1,36 +1,30 @@
-<link rel="stylesheet" href="styles/status.css">
-
 <div class="animate-screen">
 
     <h1 class="text-center sheen">{{data.name}}</h1>
 
-    <h4 class="text-center" style="margin-top:0px;">Level {{data.level}} {{data.className}}</h4>
+    <h4 class="text-center level_info">Level {{data.level}} {{data.className}}</h4>
 
     <div class="expbar_outer">
-        <div class="expbar" tooltip tooltip-content="{{data.expPercent*100}}"></div>
-        <div class="expbar_fill" style=""></div>
+        <div class="expbar" tooltip tooltip-content="{{Math.round(data.expPercent*100)}}%"></div>
+        <div class="expbar_fill" style="width:{{data.expPercent*193}}px"></div>
     </div>
 
-    <div style="width: 80%; height: 300px; margin: 0 auto;">
-    	<!-- Filler Div. Yes. -->
-    	<div style="width:0%; display:inline-block; height: 100%; vertical-align:top;">
-    	</div><div class="left text-center" style="position:relative; top:20%; left:-5%;">
+    <div class="container">
+    	<div class="left text-center" style="">
 	    	<div class="avatar-card" style="">
 	    		<div class="avatar"></div>
 	    	</div>
-            <div class="grid-block gender-symbol" style="
-                background-image:url('../assets/images/gender_symbols/{{data.gender}}.png');"> </div>
-    	</div><div class="right" style="">
+            <div class="grid-block gender-symbol"></div>
+    	</div><div class="right">
     		<ul>
                 <li>Race: </li>
     			<li>Alignment: TBD</li>
                 <li>Birthday: {{birthdayString}}</li>
-    			<!-- <li>Status:</li> -->
     		</ul>
             <attributes></attributes>
             <div class="todos">
                 <div class="todos-inner">
-                    <h4 class="sheen text-center" style="margin: 10px 0 0 10px;">quest journal</h4>
+                    <h4 class="sheen text-center">QUEST JOURNAL</h4>
                     <ul>
                         <li ng-repeat="todo in todos">
                             <div class="checkbox" ng-click="completeTodo($event, todo, $index)"></div>

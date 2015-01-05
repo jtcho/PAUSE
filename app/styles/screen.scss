@@ -24,7 +24,7 @@ html, body {
 }
 
 body {
-    background-image: url('../assets/images/starryNightFull.gif');
+    background-image: url('../assets/images/backgrounds/starryNight.gif');
     background-size: cover;
     background-repeat:no-repeat;
     min-width:800px;
@@ -112,7 +112,8 @@ li {
 }
 
 .screen {
-    width: 70%;
+    width: 650px;
+    height: 350px;
     margin: 0 auto;
 }
 
@@ -141,7 +142,6 @@ li {
     background-size:250% 250%, 100% 100%;
     -webkit-animation: sheen 6s infinite;
     -webkit-background-clip: text;
-    // -webkit-transition:background-position 0s ease;
 }
 
 @-webkit-keyframes sheen {

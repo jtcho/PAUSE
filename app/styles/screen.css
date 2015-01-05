@@ -8,7 +8,7 @@ html, body {
   margin: 0; }
 
 body {
-  background-image: url("../assets/images/starryNightFull.gif");
+  background-image: url("../assets/images/backgrounds/starryNight.gif");
   background-size: cover;
   background-repeat: no-repeat;
   min-width: 800px; }
@@ -77,7 +77,8 @@ li {
   margin: 0 auto; }
 
 .screen {
-  width: 70%;
+  width: 650px;
+  height: 350px;
   margin: 0 auto; }
 
 /*

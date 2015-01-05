@@ -1,0 +1,159 @@
+/*
+ * CUSTOM THEME: METROPOLITAN TWILIGHT
+ * --------------------
+ * Defines custom styles for a particular PAUSE theme.
+ * Should be included AFTER the default theme.
+ */
+
+//All variables should be modified and defined up here for
+//ease of use.
+//Background
+$bodyColor: #fff;
+$backgroundImage: "../assets/images/backgrounds/metropolitanTwilight.gif";
+//Fonts
+$defaultFont: 'Joystix';
+$fallbackFontColor: #874051;
+$h1Color: #874051;
+$h2Color: #734e76;
+$h3Color: #fff;
+$h4Color: #fdc7d3;
+$liColor: #fdc7d3;
+$timeColor: #fdc7d3;
+$dateColor: #fdc7d3;
+$sheenColor: rgba(160,40,70,0.7);
+$sheenHoverColor: rgba(160,40,70,0.9);
+//Screen
+$screenContainerColor: rgba(0,0,0,0);
+//Input Form (New Character/Settings)
+$inputFormFontColor: rgba(160,40,70,0.8);
+$inputFormFill: rgba(0,0,0,0);
+$inputPlaceholderColor: #c5a5ac;
+$consoleFill: #fff;
+$consoleOuterBorderColor: #e6bcd1;
+$consoleInnerBorderColor: #b38bb7;
+$consoleTextColor: #734e76;
+//Experience Bar
+$expbarGradient: -webkit-linear-gradient(right, #fff 0%, #fff);
+$expbarBorderColor: #fff;
+//Attributes
+$attributeBorderColor: #874051;
+$attributeFill: #f48da3;
+//Todos
+$todosFill: rgba(0,0,0,0);
+$todosBorderColor: #e6bcd1;
+$todosInnerBorderColor: #b38bb7;
+$todosLiColor: #fff;
+$todosCheckboxFill: #fff;
+$todosFontColor: #fdc7d3;
+$todosFill: rgba(130,104,127,0.6);
+$todosTitleColor: rgba(253, 209, 219, 0.8);
+$todosTitleHoverColor: rgba(253, 209, 219, 1.0);
+//Scrollbar
+$scrollbarTrackFill: #fdc7d3;
+$scrollbarThumbFill: #af6175;
+
+/*
+ * General Properties
+ */
+
+html, body {background-color: $bodyColor;}
+body {background-image:url($backgroundImage);}
+h1, h2, h3, h4, li, p, a {
+ 	font-family: $defaultFont, sans-serif;
+ 	color: $fallbackFontColor;
+}
+
+h1 {color: $h1Color;}
+h2 {color: $h2Color;}
+h3 {color: $h3Color;}
+h4 {color: $h4Color;}
+li {color: $liColor;}
+.time h4 {color: $timeColor;}
+.date h4 {color: $dateColor;}
+.screen-color {background-color: $screenContainerColor;}
+.sheen {
+	color: $sheenColor;
+}
+.sheen:hover {
+	color: $sheenHoverColor;
+}
+
+/*
+ * Character Selection States
+ */
+
+.input-name, .input-birthday {
+	background-color: $inputFormFill;
+	color: $inputFormFontColor;
+	border-color: $inputFormFontColor;
+}
+
+::-webkit-input-placeholder { /* WebKit browsers */
+    color: $inputPlaceholderColor;
+}
+
+.console-name {
+
+	background-color: $consoleFill;
+	border-color: $consoleOuterBorderColor;
+	box-shadow: 0 1px 0 5px $consoleInnerBorderColor inset;
+
+	h4 {
+		color: $consoleTextColor;
+	}
+}
+
+/*
+ * Status Screen State
+ */
+
+ .expbar_fill {
+ 	background: $expbarGradient;
+ 	border-color: $expbarBorderColor;
+ }
+
+ .attribute {
+ 	border-color: $attributeBorderColor;
+ }
+
+ .attribute-fill {
+ 	background-color: $attributeFill;
+ }
+
+ .todos {
+ 	background-color: $todosFill;
+ 	border-color: $todosBorderColor;
+ }
+
+ .todos-inner {
+ 	border-color: $todosInnerBorderColor;
+
+ 	li {
+ 		color: $todosLiColor;
+ 	}
+
+ 	.checkbox {
+ 		background-color: $todosCheckboxFill;
+ 	}
+
+ 	.textarea {
+ 		color: $todosFontColor;
+ 		// background-color: $todosFill;
+ 	}
+
+ 	h4 {
+ 		color: $todosTitleColor;
+ 	}
+
+ 	h4:hover {
+ 		color: $todosTitleHoverColor;
+ 	}
+ }
+
+ ::-webkit-scrollbar-track {
+ 	background-color: $scrollbarTrackFill;
+ }
+
+ ::-webkit-scrollbar-thumb {
+ 	background-color: $scrollbarThumbFill;
+ }

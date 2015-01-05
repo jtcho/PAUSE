@@ -1,0 +1,103 @@
+/*
+ * CUSTOM THEME: METROPOLITAN TWILIGHT
+ * --------------------
+ * Defines custom styles for a particular PAUSE theme.
+ * Should be included AFTER the default theme.
+ */
+/*
+ * General Properties
+ */
+html, body {
+  background-color: #fff; }
+
+body {
+  background-image: url("../assets/images/backgrounds/metropolitanTwilight.gif"); }
+
+h1, h2, h3, h4, li, p, a {
+  font-family: "Joystix", sans-serif;
+  color: #874051; }
+
+h1 {
+  color: #874051; }
+
+h2 {
+  color: #734e76; }
+
+h3 {
+  color: #fff; }
+
+h4 {
+  color: #fdc7d3; }
+
+li {
+  color: #fdc7d3; }
+
+.time h4 {
+  color: #fdc7d3; }
+
+.date h4 {
+  color: #fdc7d3; }
+
+.screen-color {
+  background-color: transparent; }
+
+.sheen {
+  color: rgba(160, 40, 70, 0.7); }
+
+.sheen:hover {
+  color: rgba(160, 40, 70, 0.9); }
+
+/*
+ * Character Selection States
+ */
+.input-name, .input-birthday {
+  background-color: transparent;
+  color: rgba(160, 40, 70, 0.8);
+  border-color: rgba(160, 40, 70, 0.8); }
+
+::-webkit-input-placeholder {
+  /* WebKit browsers */
+  color: #c5a5ac; }
+
+.console-name {
+  background-color: #fff;
+  border-color: #e6bcd1;
+  box-shadow: 0 1px 0 5px #b38bb7 inset; }
+  .console-name h4 {
+    color: #734e76; }
+
+/*
+ * Status Screen State
+ */
+.expbar_fill {
+  background: -webkit-linear-gradient(right, #fff 0%, #fff);
+  border-color: #fff; }
+
+.attribute {
+  border-color: #874051; }
+
+.attribute-fill {
+  background-color: #f48da3; }
+
+.todos {
+  background-color: rgba(130, 104, 127, 0.6);
+  border-color: #e6bcd1; }
+
+.todos-inner {
+  border-color: #b38bb7; }
+  .todos-inner li {
+    color: #fff; }
+  .todos-inner .checkbox {
+    background-color: #fff; }
+  .todos-inner .textarea {
+    color: #fdc7d3; }
+  .todos-inner h4 {
+    color: rgba(253, 209, 219, 0.8); }
+  .todos-inner h4:hover {
+    color: #fdd1db; }
+
+::-webkit-scrollbar-track {
+  background-color: #fdc7d3; }
+
+::-webkit-scrollbar-thumb {
+  background-color: #af6175; }

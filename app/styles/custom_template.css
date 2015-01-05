@@ -1,0 +1,94 @@
+/*
+ * CUSTOM_TEMPLATE.SCSS
+ * --------------------
+ * Defines custom styles for a particular PAUSE theme.
+ * Should be included AFTER the default theme.
+ */
+/*
+ * General Properties
+ */
+html, body {
+  background-color: #fff; }
+
+body {
+  background-image: url(""); }
+
+h1, h2, h3, h4, li, p, a {
+  font-family: "", sans-serif;
+  color: #fff; }
+
+h1 {
+  color: #fff; }
+
+h2 {
+  color: #fff; }
+
+h3 {
+  color: #fff; }
+
+h4 {
+  color: #fff; }
+
+li {
+  color: #fff; }
+
+.time h4 {
+  color: #fff; }
+
+.date h4 {
+  color: #fff; }
+
+.screen-color {
+  background-color: transparent; }
+
+.sheen {
+  color: transparent; }
+
+.sheen:hover {
+  color: transparent; }
+
+/*
+ * Character Selection States
+ */
+.input-name, .input-birthday {
+  background-color: transparent;
+  color: #fff;
+  border-color: #fff; }
+
+.console-name {
+  background-color: #fff;
+  border-color: #fff;
+  box-shadow-color: #fff; }
+  .console-name h4 {
+    color: #fff; }
+
+/*
+ * Status Screen State
+ */
+.expbar_fill {
+  background: -webkit-linear-gradient(right, #fff 0%, #fff);
+  border-color: #fff; }
+
+.attribute {
+  border-color: #fff; }
+
+.attribute-fill {
+  background-color: #fff; }
+
+.todos {
+  background-color: transparent;
+  border-color: #fff; }
+
+.todos-inner {
+  border-color: #fff; }
+  .todos-inner li {
+    color: #fff; }
+  .todos-inner .checkbox {
+    background-color: #fff; }
+  .todos-inner .textarea {
+    color: #fff;
+    background-color: transparent; }
+  .todos-inner h4 {
+    color: #fff; }
+  .todos-inner h4:hover {
+    color: #fff; }
