@@ -39,6 +39,8 @@ angular.module('pauseApp')
 			transitionTo($state, 'main.newbirthday');
 
 		};
+
+		$scope.genderColor = angular.element('h2').css('color');
 	}
 ])
 .controller('NewBirthdayCtrl', ['$scope', '$state', '$filter', 'storageLiason',

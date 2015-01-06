@@ -16,8 +16,10 @@ angular.module('pauseApp')
 		$scope.data = storageLiason.data;
 
 		//Apply style for gender symbol.
-		angular.element('.gender-symbol').css('background-image',
-			'url(\'../assets/images/gender_symbols/'+$scope.data.gender+'.png\')');
+		// angular.element('.gender-symbol').css('background-image',
+			// 'url(\'../assets/images/gender_symbols/'+$scope.data.gender+'.svg\')');
+
+		$scope.genderColor = angular.element('h1').css('color');
 
 		var birthday = new Date($scope.data.birthday);
 		$scope.birthdayString = (birthday.getMonth()+1) + '/' + birthday.getDate();

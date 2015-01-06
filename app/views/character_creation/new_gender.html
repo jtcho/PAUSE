@@ -10,22 +10,28 @@
 </div>
 
 <div class="gender-picker text-center">
-	<div class="grid-block gender-symbol" style="
-				background-image:url('../assets/images/gender_symbols/1.png');"
+	<gendericon gender="1" box-length="100" color="{{genderColor}}" ng-click="pickGender(1)"
+	style="display:inline-block; position:relative;top:-10px;"/>
+	<!-- <div class="grid-block gender-symbol" style="
+				background-image:url('../assets/images/gender_symbols/1.svg');"
 				ng-click="pickGender(1)"
-				>
-	</div><div class="grid-block" style="width:10%; height: 150px;">
-
-	</div><div class="grid-block gender-symbol" style="
-				background-image:url('../assets/images/gender_symbols/2.png');"
+				> -->
+	<!-- </div> -->
+	<!-- <div class="grid-block" style="width:10%; height: 150px;"> -->
+	<gendericon gender="2" box-length="100" color="{{genderColor}}" ng-click="pickGender(2)" 
+	style="display:inline-block; position:relative;top:22px;"/>
+	<!-- </div><div class="grid-block gender-symbol" style="
+				background-image:url('../assets/images/gender_symbols/2.svg');"
 				ng-click="pickGender(2)"
 	>
-	</div><div class="grid-block" style="width:10%; height: 150px;">
-
-	</div><div class="grid-block gender-symbol" style="
-				background-image:url('../assets/images/gender_symbols/3.png');"
+	</div> -->
+	<!-- <div class="grid-block" style="width:10%; height: 150px;"> -->
+	<gendericon gender="3" box-length="120" color="{{genderColor}}" ng-click="pickGender(3)" 
+	style="display:inline-block;"/>
+	<!-- </div><div class="grid-block gender-symbol" style="
+				background-image:url('../assets/images/gender_symbols/3.svg');"
 				ng-click="pickGender(3)"
-	>
+	> -->
 </div>
 
 </div>
