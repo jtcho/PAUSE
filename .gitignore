@@ -4,3 +4,4 @@ npm-debug.log
 .sass-cache/
 pause.sublime-project
 pause.sublime-workspace
+app/bower_components/
