@@ -7,6 +7,12 @@
 #expbarOuter {
   fill: #A9BFCC; }
 
+#expbarInner {
+  fill: #3e4359; }
+
+#expbarBase {
+  fill: #68cecf; }
+
 .expbar_outer {
   position: relative;
   height: 26px;
