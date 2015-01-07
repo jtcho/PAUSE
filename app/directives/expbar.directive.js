@@ -5,7 +5,7 @@ angular.module('pauseApp')
 	function($window) {
 		return {
 			restrict: 'E',
-			templateUrl: 'views/expbar.directive.html',
+			templateUrl: 'views/directives/expbar.directive.html',
 			link: function(scope, element, attrs) {
 				// scope.Math = Math;
 			}

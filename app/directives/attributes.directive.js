@@ -5,7 +5,7 @@ angular.module('pauseApp')
 	function($window) {
 		return {
 			restrict: 'E',
-			templateUrl: 'views/attributes.directive.html',
+			templateUrl: 'views/directives/attributes.directive.html',
 			link: function(scope) {
 				scope.Math = Math;
 				scope.attributes = [

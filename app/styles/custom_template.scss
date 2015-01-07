@@ -28,6 +28,7 @@ $screenContainerColor: rgba(0,0,0,0);
 $inputFormFontColor: #fff;
 $inputFormFill: rgba(0,0,0,0);
 $inputPlaceholderColor: #fff;
+$continueTriangleColor: #fff;
 $consoleFill: #fff;
 $consoleOuterBorderColor: #fff;
 $consoleInnerBorderColor: #fff;
@@ -88,6 +89,10 @@ li {color: $liColor;}
 	background-color: $inputFormFill;
 	color: $inputFormFontColor;
 	border-color: $inputFormFontColor;
+}
+
+.continue_triangle {
+	fill: $continueTriangleColor;
 }
 
 ::-webkit-input-placeholder { /* WebKit browsers */

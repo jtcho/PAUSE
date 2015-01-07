@@ -55,6 +55,9 @@ li {
   color: #fff;
   border-color: #fff; }
 
+.continue_triangle {
+  fill: #fff; }
+
 ::-webkit-input-placeholder {
   /* WebKit browsers */
   color: #fff; }

@@ -5,7 +5,7 @@ angular.module('pauseApp')
 	function($window) {
 		return {
 			restrict: 'E',
-			templateUrl: 'views/gender.directive.html',
+			templateUrl: 'views/directives/gender.directive.html',
 			scope: {
 				info:'='
 			},

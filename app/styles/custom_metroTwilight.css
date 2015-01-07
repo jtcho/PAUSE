@@ -59,6 +59,9 @@ li {
   /* WebKit browsers */
   color: #c5a5ac; }
 
+.continue_triangle {
+  fill: #874051; }
+
 .console-name {
   background-color: #fff;
   border-color: #e6bcd1;
