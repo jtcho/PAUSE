@@ -17,9 +17,9 @@ $h1Color: #874051;
 $h2Color: #734e76;
 $h3Color: #fff;
 $h4Color: #fdc7d3;
-$liColor: #fdc7d3;
+$liColor: $h4Color;
 $timeColor: #fdc7d3;
-$dateColor: #fdc7d3;
+$dateColor: $timeColor;
 $sheenColor: rgba(160,40,70,0.7);
 $sheenHoverColor: rgba(160,40,70,0.9);
 //Screen
@@ -33,8 +33,11 @@ $consoleOuterBorderColor: #e6bcd1;
 $consoleInnerBorderColor: #b38bb7;
 $consoleTextColor: #734e76;
 //Experience Bar
-$expbarGradient: -webkit-linear-gradient(right, #fff 0%, #fff);
-$expbarBorderColor: #fff;
+$expbarOuterBorder: #dcb2d8;
+$expbarInnerBorder: #923188;
+$expbarBaseColor: #ce239c;
+$expbarGradient: -webkit-linear-gradient(right, #ec40ba 10%, #ce239c);
+$expbarBorderColor: $expbarBaseColor;
 //Attributes
 $attributeBorderColor: #874051;
 $attributeFill: #f48da3;
@@ -42,8 +45,7 @@ $attributeFill: #f48da3;
 $todosFill: rgba(0,0,0,0);
 $todosBorderColor: #e6bcd1;
 $todosInnerBorderColor: #b38bb7;
-$todosLiColor: #fff;
-$todosCheckboxFill: #fff;
+$todosCheckboxFill: $liColor;
 $todosFontColor: #fdc7d3;
 $todosFill: rgba(130,104,127,0.6);
 $todosTitleColor: rgba(253, 209, 219, 0.8);
@@ -107,6 +109,18 @@ li {color: $liColor;}
  * Status Screen State
  */
 
+ #expbarOuter {
+ 	fill: $expbarOuterBorder;
+ }
+
+ #expbarInner {
+ 	fill: $expbarInnerBorder;
+ }
+
+ #expbarBase {
+ 	fill: $expbarBaseColor;
+ }
+
  .expbar_fill {
  	background: $expbarGradient;
  	border-color: $expbarBorderColor;
@@ -127,10 +141,6 @@ li {color: $liColor;}
 
  .todos-inner {
  	border-color: $todosInnerBorderColor;
-
- 	li {
- 		color: $todosLiColor;
- 	}
 
  	.checkbox {
  		background-color: $todosCheckboxFill;

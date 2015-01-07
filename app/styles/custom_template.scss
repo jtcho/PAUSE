@@ -27,11 +27,15 @@ $screenContainerColor: rgba(0,0,0,0);
 //Input Form (New Character/Settings)
 $inputFormFontColor: #fff;
 $inputFormFill: rgba(0,0,0,0);
+$inputPlaceholderColor: #fff;
 $consoleFill: #fff;
 $consoleOuterBorderColor: #fff;
 $consoleInnerBorderColor: #fff;
 $consoleTextColor: #fff;
 //Experience Bar
+$expbarOuterBorder: #fff;
+$expbarInnerBorder: #fff;
+$expbarBaseColor: #fff;
 $expbarGradient: -webkit-linear-gradient(right, #fff 0%, #fff);
 $expbarBorderColor: #fff;
 //Attributes
@@ -41,7 +45,6 @@ $attributeFill: #fff;
 $todosFill: rgba(0,0,0,0);
 $todosBorderColor: #fff;
 $todosInnerBorderColor: #fff;
-$todosLiColor: #fff;
 $todosCheckboxFill: #fff;
 $todosFontColor: #fff;
 $todosFill: rgba(0,0,0,0);
@@ -87,6 +90,10 @@ li {color: $liColor;}
 	border-color: $inputFormFontColor;
 }
 
+::-webkit-input-placeholder { /* WebKit browsers */
+    color: $inputPlaceholderColor;
+}
+
 .console-name {
 
 	background-color: $consoleFill;
@@ -101,6 +108,18 @@ li {color: $liColor;}
 /*
  * Status Screen State
  */
+
+ #expbarOuter {
+ 	fill: $expbarOuterBorder;
+ }
+
+ #expbarInner {
+ 	fill: $expbarInnerBorder;
+ }
+
+ #expbarBase {
+ 	fill: $expbarBaseColor;
+ }
 
  .expbar_fill {
  	background: $expbarGradient;
@@ -122,10 +141,6 @@ li {color: $liColor;}
 
  .todos-inner {
  	border-color: $todosInnerBorderColor;
-
- 	li {
- 		color: $todosLiColor;
- 	}
 
  	.checkbox {
  		background-color: $todosCheckboxFill;

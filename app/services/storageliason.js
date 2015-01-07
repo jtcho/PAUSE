@@ -14,8 +14,8 @@ angular.module('pauseApp').factory('storageLiason', ['localStorageService',
                 this.data.level = newLevel;
                 this.sync();
             },
-            setExpPercent : function(newExpPercent) {
-                this.data.expPercent = newExpPercent;
+            setExp : function(newExp) {
+                this.data.exp = newExp;
                 this.sync();
             },
             setName : function(newName) {

@@ -2,8 +2,8 @@
 
 angular.module('pauseApp')
 //Status Screen Angular Controller
-.controller('StatusCtrl', ['$scope', '$timeout', 'localStorageService', 'storageLiason',
-	function($scope, $timeout, localStorageService, storageLiason) {
+.controller('StatusCtrl', ['$scope', '$timeout', 'localStorageService', 'storageLiason', 'exphandler',
+	function($scope, $timeout, localStorageService, storageLiason, exphandler) {
 
 		//Fadein effect.
 		angular.element('.animate-screen').css('opacity', 0.0);
@@ -15,10 +15,11 @@ angular.module('pauseApp')
 		//Store a read-only copy of the data.
 		$scope.data = storageLiason.data;
 
-		//Apply style for gender symbol.
-		// angular.element('.gender-symbol').css('background-image',
-			// 'url(\'../assets/images/gender_symbols/'+$scope.data.gender+'.svg\')');
+		$scope.expPercent = exphandler.getExpForLevel($scope.data.level, 
+			$scope.data.exp)/exphandler.levelExp($scope.data.level);
+		$scope.levelExp = Math.round(exphandler.totalMinLevelExp($scope.data.level+1));
 
+		//Directive Styling
 		$scope.genderColor = angular.element('h1').css('color');
 
 		var birthday = new Date($scope.data.birthday);
@@ -117,20 +118,51 @@ angular.module('pauseApp')
 
 			var todo = todoPair[1];
 			if (todo) {
-				$scope.data.expPercent += 0.01 + Math.random()*0.1;
-				if ($scope.data.expPercent > 1) {
-					$scope.data.expPercent -= 1.0;
-					$scope.data.level++;
+				//Update EXP.
+				var expGained = Math.round(5 + Math.random()*49);
+				$scope.data.exp += expGained;
+				var oldLevel = $scope.data.level;
+				$scope.data.level = exphandler.calculateLevel($scope.data.exp);
+				$scope.expPercent = exphandler.getExpForLevel($scope.data.level, 
+					$scope.data.exp)/exphandler.levelExp($scope.data.level);
+				$scope.levelExp = Math.round(exphandler.totalMinLevelExp($scope.data.level+1));
+
+				var levelUp = $scope.data.level != oldLevel;
+				//Kind of hacky solution.
+				if (levelUp) {
+					var oldExpPercent = $scope.expPercent;
+					$scope.expPercent = 1;
+					$timeout(function() {
+						$scope.expPercent = 0;
+						angular.element('.expbar_fill').removeClass('expbar_transition');
+						$timeout(function() {
+							$scope.expPercent = oldExpPercent;
+							angular.element('.expbar_fill').addClass('expbar_transition');
+						}, 300);
+					}, 600);
 				}
+
+				//ANIMATE EXP POINTS
+				var indicatorText = angular.element('<h1>+'+ Math.round(expGained)+' EXP</h1>');
+				indicatorText.css('font-size', '1.5em').css('position', 'absolute').css('top', '-23px').css('right', '0');
+				checkbox.parent().append(indicatorText);
+				indicatorText.animate({
+					opacity: 1,
+					'-webkit-animation-fill-mode': 'forwards',
+					top: '-200px'
+				}, 2000, function() {});
 			}
 
+			//REMOVE TODO 
 			checkbox.parent().animate({
 				opacity: 0,
 				'webkit-animation-fill-mode': 'forwards'
-			}, 500, function() {
+			}, 1000, function() {
 				checkbox.height(0);
 				$scope.removeTodo($index);
 			});
+
+				
 		};
 
 		/*

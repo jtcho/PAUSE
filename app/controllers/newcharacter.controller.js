@@ -16,7 +16,7 @@ angular.module('pauseApp')
 				return;
 
 			storageLiason.setLevel(1);
-			storageLiason.setExpPercent(0);
+			storageLiason.setExp(0);
 			storageLiason.setName($scope.characterName.toUpperCase());
 			transitionTo($state, 'main.newgender');
 		};

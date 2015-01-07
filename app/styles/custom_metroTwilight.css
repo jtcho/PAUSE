@@ -69,9 +69,18 @@ li {
 /*
  * Status Screen State
  */
+#expbarOuter {
+  fill: #dcb2d8; }
+
+#expbarInner {
+  fill: #923188; }
+
+#expbarBase {
+  fill: #ce239c; }
+
 .expbar_fill {
-  background: -webkit-linear-gradient(right, #fff 0%, #fff);
-  border-color: #fff; }
+  background: -webkit-linear-gradient(right, #ec40ba 10%, #ce239c);
+  border-color: #ce239c; }
 
 .attribute {
   border-color: #874051; }
@@ -85,10 +94,8 @@ li {
 
 .todos-inner {
   border-color: #b38bb7; }
-  .todos-inner li {
-    color: #fff; }
   .todos-inner .checkbox {
-    background-color: #fff; }
+    background-color: #fdc7d3; }
   .todos-inner .textarea {
     color: #fdc7d3; }
   .todos-inner h4 {

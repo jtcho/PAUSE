@@ -4,6 +4,9 @@
 .level_info {
   margin-top: 0px; }
 
+#expbarOuter {
+  fill: #A9BFCC; }
+
 .expbar_outer {
   position: relative;
   height: 26px;
@@ -13,14 +16,11 @@
 .expbar {
   position: absolute;
   width: 204px;
-  height: 26px;
-  background-size: contain;
-  background-image: url("../assets/images/expbar.svg");
-  background-position: center;
-  z-index: 5; }
+  height: 26px; }
 
 .expbar_fill {
   position: absolute;
+  z-index: 1;
   width: 0;
   height: 12px;
   top: 4px;
@@ -28,7 +28,9 @@
   background: -webkit-linear-gradient(right, #78d2da 20%, #4bc3ce);
   border: none;
   border-top: 3px #4bc3ce solid;
-  border-bottom: 3px #4bc3ce solid;
+  border-bottom: 3px #4bc3ce solid; }
+
+.expbar_transition {
   -webkit-transition: width 1s; }
 
 @-webkit-keyframes expandwidth {
@@ -124,7 +126,8 @@
   border: 5px solid #a9bfcc;
   width: 97%;
   height: 271px;
-  overflow: scroll; }
+  overflow: scroll;
+  position: relative; }
   .todos-inner ul {
     text-indent: -5px;
     margin: 10px 10px 10px 10px; }
@@ -134,7 +137,8 @@
     font-size: 1.1em;
     color: #b2d8dc;
     margin: 5px;
-    width: 100%; }
+    width: 100%;
+    position: relative; }
   .todos-inner .checkbox {
     width: 10px;
     height: 10px;
