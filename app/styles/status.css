@@ -177,3 +177,33 @@
 
 ::-webkit-scrollbar-thumb {
   background-color: #89a0a2; }
+
+.button-icon {
+  width: 40px;
+  height: 40px;
+  display: inline-block;
+  margin: 0 10px 0 10px;
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  cursor: pointer; }
+
+.button-icon:hover {
+  opacity: 1.0; }
+
+.rotate-hover {
+  -webkit-transform-origin: 50% 50%;
+  -webkit-transform: rotate(0deg); }
+
+.rotate-hover:hover {
+  -webkit-animation-name: rotate;
+  -webkit-animation-duration: 10s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+  -webkit-animation-direction: forwards; }
+
+@-webkit-keyframes rotate {
+  from {
+    -webkit-transform: rotate(0deg); }
+  to {
+    -webkit-transform: rotate(360deg); } }

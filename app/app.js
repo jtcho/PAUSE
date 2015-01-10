@@ -57,5 +57,10 @@ angular.module('pauseApp', [
         url:'',
         controller: 'StatusCtrl'
     })
+    .state('main.settings', {
+        templateUrl: 'views/settings.html',
+        url:'',
+        controller: 'SettingsCtrl'
+    })
     ;
 });
