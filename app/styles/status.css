@@ -208,3 +208,23 @@
     -webkit-transform: rotate(0deg); }
   to {
     -webkit-transform: rotate(360deg); } }
+.gear-background {
+  fill: #a8becb; }
+
+.gear-outer {
+  fill: #54686e; }
+
+.gear-outer-shadow {
+  fill: #263a41; }
+
+.gear-inner-shadow {
+  fill: #97b7ca; }
+
+.gear-inner {
+  fill: #a8becb; }
+
+.gear-inner-rim {
+  fill: #263a41; }
+
+.gear-center {
+  fill: #a8becb; }

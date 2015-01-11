@@ -38,7 +38,7 @@ li {
 .date h4 {
   color: #fff; }
 
-.screen-color {
+.screen-container {
   background-color: transparent; }
 
 .sheen {
@@ -65,7 +65,7 @@ li {
 .console-name {
   background-color: #fff;
   border-color: #fff;
-  box-shadow-color: #fff; }
+  box-shadow: 0 1px 0 5px #fff inset; }
   .console-name h4 {
     color: #fff; }
 
@@ -105,4 +105,53 @@ li {
   .todos-inner h4 {
     color: #fff; }
   .todos-inner h4:hover {
+    color: #fff; }
+
+/*
+ * Gear Icon
+ */
+.gear-background {
+  fill: #fff; }
+
+.gear-outer {
+  fill: #fff; }
+
+.gear-outer-shadow {
+  fill: #fff; }
+
+.gear-inner-shadow {
+  fill: #fff; }
+
+.gear-inner {
+  fill: #fff; }
+
+.gear-inner-rim {
+  fill: #fff; }
+
+.gear-center {
+  fill: #fff; }
+
+/*
+ * Settings
+ */
+.settings {
+  background-color: #fff;
+  border-color: #fff; }
+
+.settings-inner {
+  border-color: #fff; }
+
+.settings-tab {
+  background-color: #fff; }
+
+.settings-tab:after {
+  border-color: transparent transparent #fff #fff; }
+
+.theme-icon {
+  border-color: #fff; }
+
+.modal {
+  border-color: #fff;
+  background-color: #fff; }
+  .modal h2 {
     color: #fff; }

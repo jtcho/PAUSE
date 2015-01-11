@@ -49,11 +49,27 @@ angular.module('pauseApp')
 .controller('UserSettingsCtrl', ['$scope', '$state', '$compile',
 	function($scope, $state, $compile) {
 		$scope.showErasePrompt = function() {
-			var title = 'Wipe Data';
 			var desc = 'Are you sure you want to erase all your character data?';
 			var elem = angular.element($compile('<boolean-modal '+
-					'title=\"'+title+'\" ' + 'desc=\"'+desc+'\"'
+					'modal-title=\"Wipe Data\" ' + 'desc=\"'+desc+'\"'
 				+'/>')($scope)).hide().appendTo('body').fadeIn(300);
 		};
 	}
-]);
+])
+.controller('ThemeSettingsCtrl', ['$scope', '$state',
+	function($scope, $state) {
+		$scope.themes = [
+			{
+				name: 'Metropolitan Twilight',
+				filename: 'metroTwilight',
+				thumbnail: 'styles/themes/metroTwilight.png'
+			},
+			{
+				name: 'Starry Night',
+				filename: 'starryNight',
+				thumbnail: 'styles/themes/starryNight.png'
+			}
+		];
+	}
+])
+;

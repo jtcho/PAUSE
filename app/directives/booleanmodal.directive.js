@@ -10,7 +10,7 @@ angular.module('pauseApp')
 				info:'='
 			},
 			link: function(scope, element, attrs) {
-				scope.title = attrs.title;
+				scope.title = attrs.modalTitle;
 				scope.desc = attrs.desc;
 				scope.height = attrs.height;
 				scope.closeModal = function() {

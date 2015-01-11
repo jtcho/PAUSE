@@ -8,68 +8,68 @@
 //All variables should be modified and defined up here for
 //ease of use.
 //Background
-$bodyColor: #fff;
-$backgroundImage: "";
+$bodyColor: #59a3a9;
+$backgroundImage: "../../assets/images/backgrounds/starryNight.gif";
 //Fonts
-$defaultFont: '';
-$fallbackFontColor: #fff;
-$h1Color: #fff;
-$h2Color: #fff;
-$h3Color: #fff;
-$h4Color: #fff;
-$liColor: #fff;
-$timeColor: #fff;
-$dateColor: #fff;
-$sheenColor: rgba(0,0,0,0);
-$sheenHoverColor: rgba(0,0,0,0);
+$defaultFont: 'Joystix';
+$fallbackFontColor: #b2d8dc;
+$h1Color: #b2d8dc;
+$h2Color: #a9becc;
+$h3Color: $fallbackFontColor;
+$h4Color: #c7d7f7;
+$liColor: #b2d8dc;
+$timeColor: #c7f3f7;
+$dateColor: $timeColor;
+$sheenColor: rgba(178, 216, 220, 0.7);
+$sheenHoverColor: rgba(178, 216, 220, 1.0);
 //Screen
-$screenContainerColor: rgba(0,0,0,0);
+$screenContainerColor: rgba(49, 71, 72, 0.0);
 //Input Form (New Character/Settings)
-$inputFormFontColor: #fff;
+$inputFormFontColor: $h2Color;
 $inputFormFill: rgba(0,0,0,0);
-$inputPlaceholderColor: #fff;
-$continueTriangleColor: #fff;
-$consoleFill: #fff;
-$consoleOuterBorderColor: #fff;
-$consoleInnerBorderColor: #fff;
-$consoleTextColor: #fff;
+$inputPlaceholderColor: #929292;
+$continueTriangleColor: $h2Color;
+$consoleFill: #e6f6f7;
+$consoleOuterBorderColor: #576b76;
+$consoleInnerBorderColor: #a9bfcc;
+$consoleTextColor: #576b76;
 //Experience Bar
-$expbarOuterBorder: #fff;
-$expbarInnerBorder: #fff;
-$expbarBaseColor: #fff;
-$expbarGradient: -webkit-linear-gradient(right, #fff 0%, #fff);
-$expbarBorderColor: #fff;
+$expbarOuterBorder: #A9BFCC;
+$expbarInnerBorder: #3e4359;
+$expbarBaseColor: #68cecf;
+$expbarGradient: -webkit-linear-gradient(right, rgb(120,210,218) 20%, rgb(75, 195, 206));
+$expbarBorderColor: #4bc3ce;
 //Attributes
-$attributeBorderColor: #fff;
-$attributeFill: #fff;
+$attributeBorderColor: #78d2da;
+$attributeFill: #4bc3ce;
 //Todos
-$todosFill: rgba(0,0,0,0);
-$todosBorderColor: #fff;
-$todosInnerBorderColor: #fff;
+$todosFill: rgba(230, 246, 247, 0.1);
+$todosBorderColor: #576b76;
+$todosInnerBorderColor: #a9bfcc;
 $todosCheckboxFill: #fff;
-$todosFontColor: #fff;
+$todosFontColor: #b2d8dc;
 $todosFill: rgba(0,0,0,0);
-$todosTitleColor: #fff;
-$todosTitleHoverColor: #fff;
+$todosTitleColor: rgba(199,215,247,0.6);
+$todosTitleHoverColor: rgba(199,215,247,0.9);
 //Scrollbar
-$scrollbarTrackFill: #fff;
-$scrollbarThumbFill: #fff;
+$scrollbarTrackFill: #d6eaeb;
+$scrollbarThumbFill: #89a0a2;
 //Gear Icon
-$gearBackground: #fff;
-$gearOuter: #fff;
-$gearOuterShadow: #fff;
-$gearInner: #fff;
-$gearInnerShadow: #fff;
-$gearInnerRim: #fff;
-$gearCenter: #fff;
+$gearBackground: #a8becb;
+$gearOuter: #54686e;
+$gearOuterShadow: #263a41;
+$gearInner: #a8becb;
+$gearInnerShadow: #97b7ca;
+$gearInnerRim: #263a41;
+$gearCenter: #a8becb;
 //Settings
-$settingsBackgroundFill: #fff;
-$settingsBorder: #fff;
-$settingsInnerBorder: #fff;
-$settingsModalFill: #fff;
-$settingsModalTitleColor: #fff;
-$settingsModalBorder: #fff;
-$themeIconBorder: #fff;
+$settingsBackgroundFill: $todosFill;
+$settingsBorder: $todosBorderColor;
+$settingsInnerBorder: $todosInnerBorderColor;
+$settingsModalFill: rgba(20, 30, 38, 1.0);
+$settingsModalTitleColor: $h2Color;
+$settingsModalBorder: $gearInner;
+$themeIconBorder: $todosInnerBorderColor;
 
 /*
  * General Properties

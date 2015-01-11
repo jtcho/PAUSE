@@ -6,7 +6,8 @@
 
 .settings-inner {
   border: 5px solid #a9bfcc;
-  height: 98%; }
+  height: 86.2%;
+  padding: 30px; }
 
 .settings-tab {
   display: inline-block;
@@ -25,9 +26,6 @@
   .settings-tab p {
     margin: 7px auto; }
 
-.settings-tab:hover {
-  opacity: 1.0; }
-
 .settings-tab-active {
   opacity: 1.0; }
 
@@ -43,7 +41,7 @@
   content: ' '; }
 
 .settings li {
-  font-size: 1.5em; }
+  font-size: 2em; }
 
 .checkbox {
   width: 20px;
@@ -66,9 +64,7 @@
   position: absolute;
   top: 30%;
   left: 50%;
-  margin-left: -345px;
-  padding-left: 20px;
-  padding-right: 20px; }
+  margin-left: -325px; }
 
 .modal-close {
   position: absolute;
@@ -79,7 +75,7 @@
   opacity: 0.8;
   cursor: pointer; }
 
-.modal-close:hover, .modal-booleanoption:hover {
+.modal-close:hover, .modal-booleanoption:hover, .theme-icon:hover, .settings-tab:hover {
   opacity: 1.0; }
 
 .modal-booleanoption {
@@ -88,5 +84,16 @@
   width: 100px;
   height: 40px;
   margin: 40px;
+  opacity: 0.8;
+  cursor: pointer; }
+
+.theme-icon {
+  width: 130px;
+  height: 130px;
+  display: inline-block;
+  margin: 25px;
+  background-color: #576b76;
+  background-size: contain;
+  border: 5px #a9bfcc solid;
   opacity: 0.8;
   cursor: pointer; }

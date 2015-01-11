@@ -11,7 +11,7 @@ html, body {
   background-color: #fff; }
 
 body {
-  background-image: url("../assets/images/backgrounds/metropolitanTwilight.gif"); }
+  background-image: url("../../assets/images/backgrounds/metropolitanTwilight.gif"); }
 
 h1, h2, h3, h4, li, p, a {
   font-family: "Joystix", sans-serif;
@@ -38,7 +38,7 @@ li {
 .date h4 {
   color: #fdc7d3; }
 
-.screen-color {
+.screen-container {
   background-color: transparent; }
 
 .sheen {
@@ -111,3 +111,52 @@ li {
 
 ::-webkit-scrollbar-thumb {
   background-color: #af6175; }
+
+/*
+ * Gear Icon
+ */
+.gear-background {
+  fill: #fbc1cf; }
+
+.gear-outer {
+  fill: #874051; }
+
+.gear-outer-shadow {
+  fill: #5c2834; }
+
+.gear-inner-shadow {
+  fill: #e990a6; }
+
+.gear-inner {
+  fill: #fbc1cf; }
+
+.gear-inner-rim {
+  fill: #5c2834; }
+
+.gear-center {
+  fill: #fbc1cf; }
+
+/*
+ * Settings
+ */
+.settings {
+  background-color: rgba(130, 104, 127, 0.6);
+  border-color: #e6bcd1; }
+
+.settings-inner {
+  border-color: #b38bb7; }
+
+.settings-tab {
+  background-color: #e6bcd1; }
+
+.settings-tab:after {
+  border-color: transparent transparent #e6bcd1 #e6bcd1; }
+
+.theme-icon {
+  border-color: #ed9ec6; }
+
+.modal {
+  border-color: #e6bcd1;
+  background-color: #a54c7a; }
+  .modal h2 {
+    color: #ed9ec6; }

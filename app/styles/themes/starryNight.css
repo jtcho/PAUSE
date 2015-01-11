@@ -1,0 +1,157 @@
+/*
+ * CUSTOM_TEMPLATE.SCSS
+ * --------------------
+ * Defines custom styles for a particular PAUSE theme.
+ * Should be included AFTER the default theme.
+ */
+/*
+ * General Properties
+ */
+html, body {
+  background-color: #59a3a9; }
+
+body {
+  background-image: url("../../assets/images/backgrounds/starryNight.gif"); }
+
+h1, h2, h3, h4, li, p, a {
+  font-family: "Joystix", sans-serif;
+  color: #b2d8dc; }
+
+h1 {
+  color: #b2d8dc; }
+
+h2 {
+  color: #a9becc; }
+
+h3 {
+  color: #b2d8dc; }
+
+h4 {
+  color: #c7d7f7; }
+
+li {
+  color: #b2d8dc; }
+
+.time h4 {
+  color: #c7f3f7; }
+
+.date h4 {
+  color: #c7f3f7; }
+
+.screen-container {
+  background-color: rgba(49, 71, 72, 0); }
+
+.sheen {
+  color: rgba(178, 216, 220, 0.7); }
+
+.sheen:hover {
+  color: #b2d8dc; }
+
+/*
+ * Character Selection States
+ */
+.input-name, .input-birthday {
+  background-color: transparent;
+  color: #a9becc;
+  border-color: #a9becc; }
+
+.continue_triangle {
+  fill: #a9becc; }
+
+::-webkit-input-placeholder {
+  /* WebKit browsers */
+  color: #929292; }
+
+.console-name {
+  background-color: #e6f6f7;
+  border-color: #576b76;
+  box-shadow: 0 1px 0 5px #a9bfcc inset; }
+  .console-name h4 {
+    color: #576b76; }
+
+/*
+ * Status Screen State
+ */
+#expbarOuter {
+  fill: #A9BFCC; }
+
+#expbarInner {
+  fill: #3e4359; }
+
+#expbarBase {
+  fill: #68cecf; }
+
+.expbar_fill {
+  background: -webkit-linear-gradient(right, #78d2da 20%, #4bc3ce);
+  border-color: #4bc3ce; }
+
+.attribute {
+  border-color: #78d2da; }
+
+.attribute-fill {
+  background-color: #4bc3ce; }
+
+.todos {
+  background-color: transparent;
+  border-color: #576b76; }
+
+.todos-inner {
+  border-color: #a9bfcc; }
+  .todos-inner .checkbox {
+    background-color: #fff; }
+  .todos-inner .textarea {
+    color: #b2d8dc;
+    background-color: transparent; }
+  .todos-inner h4 {
+    color: rgba(199, 215, 247, 0.6); }
+  .todos-inner h4:hover {
+    color: rgba(199, 215, 247, 0.9); }
+
+/*
+ * Gear Icon
+ */
+.gear-background {
+  fill: #a8becb; }
+
+.gear-outer {
+  fill: #54686e; }
+
+.gear-outer-shadow {
+  fill: #263a41; }
+
+.gear-inner-shadow {
+  fill: #97b7ca; }
+
+.gear-inner {
+  fill: #a8becb; }
+
+.gear-inner-rim {
+  fill: #263a41; }
+
+.gear-center {
+  fill: #a8becb; }
+
+/*
+ * Settings
+ */
+.settings {
+  background-color: transparent;
+  border-color: #576b76; }
+
+.settings-inner {
+  border-color: #a9bfcc; }
+
+.settings-tab {
+  background-color: #576b76; }
+
+.settings-tab:after {
+  border-color: transparent transparent #576b76 #576b76; }
+
+.theme-icon {
+  border-color: #a9bfcc; }
+
+.modal {
+  border-color: #a8becb;
+  background-color: #141e26; }
+  .modal h2 {
+    color: #a9becc; }

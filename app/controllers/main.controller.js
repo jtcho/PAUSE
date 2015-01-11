@@ -7,7 +7,7 @@ angular.module('pauseApp')
 		//If we have already existing data, skip character creation.
 		if (storageLiason.isValid()) {
 			$state.go('main.status', [], {	location: false });	
-			// $state.go('main.settings.user', [], {	location: false });	
+			// $state.go('main.settings.theme', [], {	location: false });	
 			//location: false
 			//Avoids annoying issue where state change cancels any pending url navigation.
 		}

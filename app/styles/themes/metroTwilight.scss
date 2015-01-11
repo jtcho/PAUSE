@@ -9,7 +9,7 @@
 //ease of use.
 //Background
 $bodyColor: #fff;
-$backgroundImage: "../assets/images/backgrounds/metropolitanTwilight.gif";
+$backgroundImage: "../../assets/images/backgrounds/metropolitanTwilight.gif";
 //Fonts
 $defaultFont: 'Joystix';
 $fallbackFontColor: #874051;
@@ -44,8 +44,8 @@ $attributeBorderColor: #874051;
 $attributeFill: #f48da3;
 //Todos
 $todosFill: rgba(0,0,0,0);
-$todosBorderColor: #e6bcd1;
-$todosInnerBorderColor: #b38bb7;
+$todosBorderColor: $consoleOuterBorderColor;
+$todosInnerBorderColor: $consoleInnerBorderColor;
 $todosCheckboxFill: $liColor;
 $todosFontColor: #fdc7d3;
 $todosFill: rgba(130,104,127,0.6);
@@ -54,6 +54,22 @@ $todosTitleHoverColor: rgba(253, 209, 219, 1.0);
 //Scrollbar
 $scrollbarTrackFill: #fdc7d3;
 $scrollbarThumbFill: #af6175;
+//Gear Icon
+$gearBackground: #fbc1cf;
+$gearOuter: #874051;
+$gearOuterShadow: #5c2834;
+$gearInner: $gearBackground;
+$gearInnerShadow: #e990a6;
+$gearInnerRim: $gearOuterShadow;
+$gearCenter: $gearBackground;
+//Settings
+$settingsBackgroundFill: $todosFill;
+$settingsBorder: $todosBorderColor;
+$settingsInnerBorder: $todosInnerBorderColor;
+$settingsModalFill: #a54c7a;
+$settingsModalTitleColor: #ed9ec6;
+$settingsModalBorder: $settingsBorder;
+$themeIconBorder: #ed9ec6;
 
 /*
  * General Properties
@@ -73,7 +89,7 @@ h4 {color: $h4Color;}
 li {color: $liColor;}
 .time h4 {color: $timeColor;}
 .date h4 {color: $dateColor;}
-.screen-color {background-color: $screenContainerColor;}
+.screen-container {background-color: $screenContainerColor;}
 .sheen {
 	color: $sheenColor;
 }
@@ -114,61 +130,127 @@ li {color: $liColor;}
  * Status Screen State
  */
 
- #expbarOuter {
- 	fill: $expbarOuterBorder;
- }
+#expbarOuter {
+	fill: $expbarOuterBorder;
+}
 
- #expbarInner {
- 	fill: $expbarInnerBorder;
- }
+#expbarInner {
+	fill: $expbarInnerBorder;
+}
 
- #expbarBase {
- 	fill: $expbarBaseColor;
- }
+#expbarBase {
+	fill: $expbarBaseColor;
+}
 
- .expbar_fill {
- 	background: $expbarGradient;
- 	border-color: $expbarBorderColor;
- }
+.expbar_fill {
+	background: $expbarGradient;
+	border-color: $expbarBorderColor;
+}
 
- .attribute {
- 	border-color: $attributeBorderColor;
- }
+.attribute {
+	border-color: $attributeBorderColor;
+}
 
- .attribute-fill {
- 	background-color: $attributeFill;
- }
+.attribute-fill {
+	background-color: $attributeFill;
+}
 
- .todos {
- 	background-color: $todosFill;
- 	border-color: $todosBorderColor;
- }
+.todos {
+	background-color: $todosFill;
+	border-color: $todosBorderColor;
+}
 
- .todos-inner {
- 	border-color: $todosInnerBorderColor;
+.todos-inner {
+	border-color: $todosInnerBorderColor;
 
- 	.checkbox {
- 		background-color: $todosCheckboxFill;
- 	}
+	.checkbox {
+		background-color: $todosCheckboxFill;
+	}
 
- 	.textarea {
- 		color: $todosFontColor;
- 		// background-color: $todosFill;
- 	}
+	.textarea {
+		color: $todosFontColor;
+		// background-color: $todosFill;
+	}
 
- 	h4 {
- 		color: $todosTitleColor;
- 	}
+	h4 {
+		color: $todosTitleColor;
+	}
 
- 	h4:hover {
- 		color: $todosTitleHoverColor;
- 	}
- }
+	h4:hover {
+		color: $todosTitleHoverColor;
+	}
+}
 
- ::-webkit-scrollbar-track {
- 	background-color: $scrollbarTrackFill;
- }
+::-webkit-scrollbar-track {
+	background-color: $scrollbarTrackFill;
+}
 
- ::-webkit-scrollbar-thumb {
- 	background-color: $scrollbarThumbFill;
- }
+::-webkit-scrollbar-thumb {
+	background-color: $scrollbarThumbFill;
+}
+
+/*
+ * Gear Icon
+ */
+
+.gear-background {
+	fill: $gearBackground;
+}
+
+.gear-outer {
+	fill: $gearOuter;
+}
+
+.gear-outer-shadow {
+	fill: $gearOuterShadow;
+}
+
+.gear-inner-shadow {
+	fill: $gearInnerShadow;
+}
+
+.gear-inner {
+	fill: $gearInner;
+}
+
+.gear-inner-rim {
+	fill: $gearInnerRim;
+}
+
+.gear-center {
+	fill: $gearCenter;
+}
+
+/*
+ * Settings
+ */
+
+.settings {
+	background-color: $settingsBackgroundFill;
+	border-color: $settingsBorder;
+}
+
+.settings-inner {
+	border-color: $settingsInnerBorder;
+}
+
+.settings-tab {
+	background-color: $settingsBorder;
+}
+
+.settings-tab:after {
+	border-color: transparent transparent $settingsBorder $settingsBorder;
+}
+
+.theme-icon {
+	border-color: $themeIconBorder;
+}
+
+.modal {
+	border-color: $settingsModalBorder;
+	background-color: $settingsModalFill;
+
+	h2 {
+		color:$settingsModalTitleColor;
+	}
+}
