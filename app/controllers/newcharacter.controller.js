@@ -18,6 +18,7 @@ angular.module('pauseApp')
 			storageLiason.setLevel(1);
 			storageLiason.setExp(0);
 			storageLiason.setName($scope.characterName.toUpperCase());
+			storageLiason.setTheme('starryNight');
 			transitionTo($state, 'main.newgender');
 		};
 	}

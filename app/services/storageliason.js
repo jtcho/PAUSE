@@ -42,6 +42,10 @@ angular.module('pauseApp').factory('storageLiason', ['localStorageService',
                 this.data.valid = valid;
                 this.sync();
             },
+            setTheme : function(theme) {
+                this.data.theme = theme;
+                this.sync();
+            },
             sync : function() {
                 localStorageService.set('data', this.data);
             },

@@ -51,13 +51,13 @@ angular.module('pauseApp')
 		$scope.showErasePrompt = function() {
 			var desc = 'Are you sure you want to erase all your character data?';
 			var elem = angular.element($compile('<boolean-modal '+
-					'modal-title=\"Wipe Data\" ' + 'desc=\"'+desc+'\"'
-				+'/>')($scope)).hide().appendTo('body').fadeIn(300);
+					'modal-title=\"Wipe Data\" ' + 'desc=\"'+desc+'\"' +
+					'/>')($scope)).hide().appendTo('body').fadeIn(300);
 		};
 	}
 ])
-.controller('ThemeSettingsCtrl', ['$scope', '$state',
-	function($scope, $state) {
+.controller('ThemeSettingsCtrl', ['$scope', '$state', 'storageLiason',
+	function($scope, $state, storageLiason) {
 		$scope.themes = [
 			{
 				name: 'Metropolitan Twilight',
@@ -70,6 +70,14 @@ angular.module('pauseApp')
 				thumbnail: 'styles/themes/starryNight.png'
 			}
 		];
+
+		$scope.changeTheme = function(filename) {
+			if (storageLiason.data.theme != filename) {
+				var cssLink = angular.element('link[title="activeTheme"]');
+				cssLink.attr('href', 'styles/themes/'+filename+'.css?v='+Math.random(10,10000));
+				storageLiason.setTheme(filename);
+			}
+		};
 	}
 ])
 ;
