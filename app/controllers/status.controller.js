@@ -70,7 +70,7 @@ angular.module('pauseApp')
 			if (! todo)
 				$scope.removeTodo($index);
 			else {
-				$scope.todos[$index] = [key, todo.toUpperCase()];
+				$scope.todos[$index] = [key, todo.replace(/(&NBSP;)+/gi, '').toUpperCase()];
 
 				if ($scope.todos.length == $index + 1)
 					$scope.todos.push([$scope.nextKey++, '']);

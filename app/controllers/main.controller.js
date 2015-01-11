@@ -4,18 +4,23 @@ angular.module('pauseApp')
 .controller('MainCtrl', ['$scope', 'localStorageService', '$state', 'storageLiason',
 	function($scope, localStorageService, $state, storageLiason) {
 
+		var themes = ['metroTwilight', 'starryNight'];
 		var cssLink = angular.element('link[title="activeTheme"]');
-		cssLink.attr('href', 'styles/themes/'+storageLiason.data.theme+'.css?v='+Math.random(10,10000));
 
 		//If we have already existing data, skip character creation.
 		if (storageLiason.isValid()) {
+			cssLink.attr('href', 'styles/themes/'+storageLiason.data.theme+'.css?v='+Math.random(10,10000));
+
 			$state.go('main.status', [], {	location: false });	
 			// $state.go('main.settings.theme', [], {	location: false });	
 			//location: false
 			//Avoids annoying issue where state change cancels any pending url navigation.
 		}
-		else
+		else {
+			var randomThemeIndex = Math.floor(Math.random()*themes.length);
+			cssLink.attr('href', 'styles/themes/'+themes[randomThemeIndex]+'.css?v='+Math.random(10,10000));
 			storageLiason.reset();
+		}
 
 		//Set up date to be used in application.
 		$scope.dt = new Date();
