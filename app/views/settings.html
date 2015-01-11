@@ -1,1 +1,12 @@
-<h1>Coming soon...</h1>
+<div class="animate-screen">
+<h1 class="text-center">Settings</h1>
+
+<div class="settings-tab text-center" ng-repeat="tab in settingTabs">
+	<p>{{tab.id}}</p>
+</div>
+<div class="container settings">
+	<div class="settings-inner">
+		<div ui-view="" />
+	</div>
+</div>
+</div>

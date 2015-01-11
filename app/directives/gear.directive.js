@@ -15,7 +15,7 @@ angular.module('pauseApp')
 			link: function(scope, element, attrs) {
 
 				scope.openSettings = function() {
-					transitionTo($state, 'main.settings');
+					transitionTo($state, 'main.settings.general');
 				};
 			}
 		};
