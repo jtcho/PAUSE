@@ -1,12 +1,12 @@
-<div class="animate-screen">
-<h1 class="text-center">Settings</h1>
+<div class="">
+<h1 class="text-center sheen">Settings</h1>
 
-<div class="settings-tab text-center" ng-repeat="tab in settingTabs">
+<div class="settings-tab text-center" ng-class="isActive(tab.state)" ng-repeat="tab in settingTabs" ng-click="openSettingsView(tab.state)">
 	<p>{{tab.id}}</p>
 </div>
 <div class="container settings">
 	<div class="settings-inner">
-		<div ui-view="" />
+		<div class="animate-screen" ui-view="" />
 	</div>
 </div>
 </div>

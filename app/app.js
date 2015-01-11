@@ -63,7 +63,17 @@ angular.module('pauseApp', [
         controller: 'SettingsCtrl'
     })
     .state('main.settings.general', {
-        template: '<h1>temp</h1>',
+        template: '<h1>general</h1>',
+        url: '',
+        controller: function($scope) {}
+    })
+    .state('main.settings.user', {
+        templateUrl: 'views/settings/settings_user.html',
+        url: '',
+        controller: 'UserSettingsCtrl'
+    })
+    .state('main.settings.theme', {
+        template: '<h1>theme</h1>',
         url: '',
         controller: function($scope) {}
     })

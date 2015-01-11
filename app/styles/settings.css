@@ -41,3 +41,52 @@
   bottom: 0px;
   right: -24px;
   content: ' '; }
+
+.settings li {
+  font-size: 1.5em; }
+
+.checkbox {
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  background-color: #fff;
+  vertical-align: middle;
+  opacity: 0.6;
+  cursor: pointer; }
+
+.checkbox:hover {
+  opacity: 0.9; }
+
+.modal {
+  width: 650px;
+  position: absolute;
+  background-color: #141e26;
+  border: #a8becb 5px solid;
+  overflow: auto;
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  margin-left: -345px;
+  padding-left: 20px;
+  padding-right: 20px; }
+
+.modal-close {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  background-color: #a9becc;
+  top: 20px;
+  opacity: 0.8;
+  cursor: pointer; }
+
+.modal-close:hover, .modal-booleanoption:hover {
+  opacity: 1.0; }
+
+.modal-booleanoption {
+  display: inline-block;
+  position: relative;
+  width: 100px;
+  height: 40px;
+  margin: 40px;
+  opacity: 0.8;
+  cursor: pointer; }
