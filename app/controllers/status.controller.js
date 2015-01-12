@@ -2,8 +2,8 @@
 
 angular.module('pauseApp')
 //Status Screen Angular Controller
-.controller('StatusCtrl', ['$scope', '$timeout', 'localStorageService', 'storageLiason', 'exphandler',
-	function($scope, $timeout, localStorageService, storageLiason, exphandler) {
+.controller('StatusCtrl', ['$scope', '$timeout', 'localStorageService', 'storageLiason', 'expHandler', 'soundManager',
+	function($scope, $timeout, localStorageService, storageLiason, expHandler, soundManager) {
 
 		//Fadein effect.
 		angular.element('.animate-screen').css('opacity', 0.0);
@@ -15,9 +15,9 @@ angular.module('pauseApp')
 		//Store a read-only copy of the data.
 		$scope.data = storageLiason.data;
 
-		$scope.expPercent = exphandler.getExpForLevel($scope.data.level, 
-			$scope.data.exp)/exphandler.levelExp($scope.data.level);
-		$scope.levelExp = Math.round(exphandler.totalMinLevelExp($scope.data.level+1));
+		$scope.expPercent = expHandler.getExpForLevel($scope.data.level, 
+			$scope.data.exp)/expHandler.levelExp($scope.data.level);
+		$scope.levelExp = Math.round(expHandler.totalMinLevelExp($scope.data.level+1));
 
 		//Directive Styling
 		$scope.genderColor = angular.element('h1').css('color');
@@ -122,14 +122,16 @@ angular.module('pauseApp')
 				var expGained = Math.round(5 + Math.random()*49);
 				$scope.data.exp += expGained;
 				var oldLevel = $scope.data.level;
-				$scope.data.level = exphandler.calculateLevel($scope.data.exp);
-				$scope.expPercent = exphandler.getExpForLevel($scope.data.level, 
-					$scope.data.exp)/exphandler.levelExp($scope.data.level);
-				$scope.levelExp = Math.round(exphandler.totalMinLevelExp($scope.data.level+1));
+				$scope.data.level = expHandler.calculateLevel($scope.data.exp);
+				$scope.expPercent = expHandler.getExpForLevel($scope.data.level, 
+					$scope.data.exp)/expHandler.levelExp($scope.data.level);
+				$scope.levelExp = Math.round(expHandler.totalMinLevelExp($scope.data.level+1));
 
 				var levelUp = $scope.data.level != oldLevel;
 				//Kind of hacky solution.
 				if (levelUp) {
+					soundManager.playSound('levelUpAudio','levelup', 500, 13000);
+
 					var oldExpPercent = $scope.expPercent;
 					$scope.expPercent = 1;
 					$timeout(function() {

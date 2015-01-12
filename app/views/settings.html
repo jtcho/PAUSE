@@ -1,8 +1,11 @@
-<div class="">
+<div class="settings-screen">
 <h1 class="text-center sheen">Settings</h1>
 
 <div class="settings-tab text-center" ng-class="isActive(tab.state)" ng-repeat="tab in settingTabs" ng-click="openSettingsView(tab.state)">
 	<p>{{tab.id}}</p>
+</div>
+<div class="settings-tab-right text-center" ng-click="openStatusView()">
+	<p>HOME</p>
 </div>
 <div class="container settings">
 	<div class="settings-inner">

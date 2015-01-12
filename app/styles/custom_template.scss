@@ -62,6 +62,10 @@ $gearInner: #fff;
 $gearInnerShadow: #fff;
 $gearInnerRim: #fff;
 $gearCenter: #fff;
+//Clock Icon
+$clockBase: #fff;
+$clockFace: #fff;
+$clockHand: #fff;
 //Settings
 $settingsBackgroundFill: #fff;
 $settingsBorder: #fff;
@@ -223,6 +227,22 @@ li {color: $liColor;}
 }
 
 /*
+ * Clock Icon
+ */
+
+.clock-base {
+	fill: $clockBase;
+}
+
+.clock-face {
+	fill: $clockFace;
+}
+
+.clock-hand {
+	fill: $clockHand;
+}
+
+/*
  * Settings
  */
 
@@ -235,12 +255,16 @@ li {color: $liColor;}
 	border-color: $settingsInnerBorder;
 }
 
-.settings-tab {
+.settings-tab, .settings-tab-right {
 	background-color: $settingsBorder;
 }
 
 .settings-tab:after {
 	border-color: transparent transparent $settingsBorder $settingsBorder;
+}
+
+.settings-tab-right:before {
+	border-color: transparent $settingsBorder $settingsBorder transparent;
 }
 
 .theme-icon {

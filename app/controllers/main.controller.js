@@ -9,10 +9,11 @@ angular.module('pauseApp')
 
 		//If we have already existing data, skip character creation.
 		if (storageLiason.isValid()) {
-			cssLink.attr('href', 'styles/themes/'+storageLiason.data.theme+'.css?v='+Math.random(10,10000));
+			cssLink.attr('href', 'styles/themes/'+storageLiason.getTheme()+'.css?v='+Math.random(10,10000));
 
-			$state.go('main.status', [], {	location: false });	
-			// $state.go('main.settings.theme', [], {	location: false });	
+			$state.go(storageLiason.getDefaultView(), [], {	location: false });	
+			// $state.go('main.settings.general', [], {	location: false });	
+			// $state.go('simple', [], { location: false});
 			//location: false
 			//Avoids annoying issue where state change cancels any pending url navigation.
 		}
@@ -20,6 +21,8 @@ angular.module('pauseApp')
 			var randomThemeIndex = Math.floor(Math.random()*themes.length);
 			cssLink.attr('href', 'styles/themes/'+themes[randomThemeIndex]+'.css?v='+Math.random(10,10000));
 			storageLiason.reset();
+			storageLiason.init();
+			storageLiason.setTheme(themes[randomThemeIndex]);
 		}
 
 		//Set up date to be used in application.

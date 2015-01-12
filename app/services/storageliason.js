@@ -10,6 +10,10 @@ angular.module('pauseApp').factory('storageLiason', ['localStorageService',
     function(localStorageService) {
         return {
             data : localStorageService.get('data') || {},
+            settings : localStorageService.get('settings') || {},
+            /*
+             * SETTERS
+             */
             setLevel : function(newLevel) {
                 this.data.level = newLevel;
                 this.sync();
@@ -42,12 +46,51 @@ angular.module('pauseApp').factory('storageLiason', ['localStorageService',
                 this.data.valid = valid;
                 this.sync();
             },
+            //SETTINGS
+            setSoundEnabled : function(enabled) {
+                this.settings.sound = enabled;
+                this.sync();
+            },
             setTheme : function(theme) {
-                this.data.theme = theme;
+                this.settings.theme = theme;
+                this.sync();
+            },
+            setDefaultView : function(view) {
+                this.settings.view = view;
+                this.sync();
+            },
+            setSettingsValue : function(key, value) {
+                this.settings[key] = value;
+                this.sync();
+                
+             },
+            /*
+             * GETTER FUNCTIONS
+             */
+             getTheme : function() {
+                return this.settings.theme || 'starryNight';
+             },
+             getDefaultView : function() {
+                return this.settings.view || 'main.status';
+             },
+             isSoundEnabled : function() {
+                return this.settings.sound;
+             },
+            /*
+             * UTILITY FUNCTIONS
+             */
+            init : function() {
+                //Initialize User Data.
+                this.data.level = 1;
+                this.data.exp = 0;
+                //Initialize Settings.
+                this.settings.sound = false;
+
                 this.sync();
             },
             sync : function() {
                 localStorageService.set('data', this.data);
+                localStorageService.set('settings', this.settings);
             },
             isValid : function() {
                 return this.data.valid;

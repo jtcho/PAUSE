@@ -15,10 +15,7 @@ angular.module('pauseApp')
 			if (! $scope.characterName || !/[a-zA-Z]+/.test($scope.characterName) || $scope.characterName.length > 10)
 				return;
 
-			storageLiason.setLevel(1);
-			storageLiason.setExp(0);
-			storageLiason.setName($scope.characterName.toUpperCase());
-			storageLiason.setTheme('starryNight');
+            storageLiason.setName($scope.characterName.toUpperCase());
 			transitionTo($state, 'main.newgender');
 		};
 	}
@@ -181,9 +178,11 @@ var isVowel = function(letter) {
  * Transitions the SPA from its current state to the next,
  * fading out all the currently loaded elements in the ui-view first.
  */
-var transitionTo = function($state, nextState) {
+var transitionTo = function($state, nextState, animateClass) {
+	if (! animateClass)
+		animateClass = '.animate-screen';
 
-	angular.element('.animate-screen').animate({
+	angular.element(animateClass).animate({
 		opacity: 0,
 		'-webkit-animation-fill-mode': 'forwards'
 	}, 500, function() {

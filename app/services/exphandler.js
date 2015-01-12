@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('pauseApp').service('exphandler', 
+angular.module('pauseApp').service('expHandler', 
 	function() {
 		return {
 			expToNextLevel : [100, 100.952, 101.994, 103.135, 104.386, 105.755, 107.254, 108.896,

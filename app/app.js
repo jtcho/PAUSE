@@ -63,9 +63,9 @@ angular.module('pauseApp', [
         controller: 'SettingsCtrl'
     })
     .state('main.settings.general', {
-        template: '<h1>general</h1>',
+        templateUrl: 'views/settings/settings_general.html',
         url: '',
-        controller: function($scope) {}
+        controller: 'GeneralSettingsCtrl'
     })
     .state('main.settings.user', {
         templateUrl: 'views/settings/settings_user.html',
@@ -77,5 +77,13 @@ angular.module('pauseApp', [
         url: '',
         controller: 'ThemeSettingsCtrl'
     })
+    /*
+     * CLOCK MODE
+     */
+     .state('simple', {
+        templateUrl: 'views/simple.html',
+        url: '',
+        controller: 'SimpleCtrl'
+     })
     ;
 });

@@ -132,6 +132,18 @@ li {
   fill: #fff; }
 
 /*
+ * Clock Icon
+ */
+.clock-base {
+  fill: #fff; }
+
+.clock-face {
+  fill: #fff; }
+
+.clock-hand {
+  fill: #fff; }
+
+/*
  * Settings
  */
 .settings {
@@ -141,11 +153,14 @@ li {
 .settings-inner {
   border-color: #fff; }
 
-.settings-tab {
+.settings-tab, .settings-tab-right {
   background-color: #fff; }
 
 .settings-tab:after {
   border-color: transparent transparent #fff #fff; }
+
+.settings-tab-right:before {
+  border-color: transparent #fff #fff transparent; }
 
 .theme-icon {
   border-color: #fff; }

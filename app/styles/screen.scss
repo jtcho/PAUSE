@@ -1,7 +1,7 @@
 // @import '../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap';
 
 //VARIABLES
-$bodyColor: #59a3a9;
+$bodyColor: #000;
 $h1Color: #b2d8dc;
 $h2Color: #a9becc;
 $h4Color: #c7d7f7;
@@ -24,16 +24,15 @@ html, body {
 }
 
 body {
-    background-image: url('../assets/images/backgrounds/starryNight.gif');
+    // background-image: url('../assets/images/backgrounds/starryNight.gif');
     background-size: cover;
     background-repeat:no-repeat;
-    min-width:800px;
 }
 
 
 h1, h2, h3, h4, h5, h6, li, p {
     font-family: 'Joystix', sans-serif;
-    color: $h1Color;
+    // color: $h1Color;
     -webkit-user-select: none;
 }
 
@@ -54,7 +53,7 @@ h3 {
 }
 
 h4 {
-    color: $h4Color;
+    // color: $h4Color;
     font-size: 1.5em;
     margin: 20px 0 0 0;
 }
@@ -110,6 +109,7 @@ li {
     left: 50%;
     transform: translate(-50%, -50%);
     margin: 0 auto;
+    min-width: 800px;
 }
 
 .screen {

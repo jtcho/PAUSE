@@ -44,6 +44,17 @@ angular.module('pauseApp')
 				});
 			}
 		});
+
+		$scope.openStatusView = function() {
+			transitionTo($state, 'main.status', '.settings-screen');
+		};
+	}
+])
+.controller('GeneralSettingsCtrl', ['$scope', '$state', 'storageLiason',
+	function($scope, $state, storageLiason) {
+
+		$scope.isSoundEnabled = ! storageLiason.isSoundEnabled();
+
 	}
 ])
 .controller('UserSettingsCtrl', ['$scope', '$state', '$compile',
