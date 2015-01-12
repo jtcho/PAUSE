@@ -4,6 +4,7 @@
 var transitionTo;
 var zodiacSign;
 var isVowel;
+var notify;
 
 angular.module('pauseApp')
 //CONTROLLER FOR CHOOSING NAME PAGE
@@ -93,7 +94,6 @@ function($scope, $state, $filter, storageLiason) {
 				return;
 
 			storageLiason.setClassName($scope.className.toUpperCase());
-			storageLiason.setValid(true);
 			transitionTo($state, 'main.newsw');
 		};
 
@@ -118,6 +118,16 @@ function($scope, $state, $filter, storageLiason) {
         		$scope.wIndex = $scope.attrs.length + $scope.wIndex;
         	else
         		$scope.wIndex %= $scope.attrs.length;
+        };
+        $scope.submit = function() {
+        	if ($scope.sIndex === $scope.wIndex) {
+        		notify('You can\'t choose the same attribute for the strong/weak points!');
+        	}
+
+        	storageLiason.setStrength($scope.sIndex);
+        	storageLiason.setWeakness($scope.wIndex);
+        	storageLiason.setValid(true);
+        	transitionTo($state, 'main.status');
         };
 	}
 ])

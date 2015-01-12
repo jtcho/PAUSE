@@ -74,6 +74,11 @@ $settingsModalFill: rgba(20, 30, 38, 1.0);
 $settingsModalTitleColor: $h2Color;
 $settingsModalBorder: $gearInner;
 $themeIconBorder: $todosInnerBorderColor;
+//Notify Dialog Box
+$notifyFill: $consoleFill;
+$notifyBorder: $consoleOuterBorderColor;
+$notifyInnerBorder: $consoleInnerBorderColor;
+$notifyTextColor: $consoleTextColor;
 
 /*
  * General Properties
@@ -99,6 +104,14 @@ li {color: $liColor;}
 }
 .sheen:hover {
 	color: $sheenHoverColor;
+}
+.notify {
+	background-color: $notifyFill;
+    border: 5px solid $notifyBorder;
+    box-shadow: 0 1px 0 5px $notifyInnerBorder inset;
+    h4 {
+    	color: $notifyTextColor;
+    }
 }
 
 /*

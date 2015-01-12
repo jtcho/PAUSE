@@ -103,3 +103,12 @@ li {
 
 .sheen-image {
   -webkit-background-clip: content-box; }
+
+.notify {
+  display: inline-block;
+  position: relative;
+  margin-top: 5%;
+  padding: 10px;
+  background-color: #e6f6f7;
+  border: 5px solid #576b76;
+  box-shadow: 0 1px 0 5px #a9bfcc inset; }

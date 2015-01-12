@@ -47,6 +47,13 @@ li {
 .sheen:hover {
   color: rgba(160, 40, 70, 0.9); }
 
+.notify {
+  background-color: #fff;
+  border: 5px solid #e6bcd1;
+  box-shadow: 0 1px 0 5px #b38bb7 inset; }
+  .notify h4 {
+    color: #734e76; }
+
 /*
  * Character Selection States
  */

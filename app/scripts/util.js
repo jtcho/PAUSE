@@ -94,3 +94,20 @@ var transitionTo = function($state, nextState, animateClass) {
 	});
 
 };
+
+/*
+ * Function: notify
+ * ----------------
+ * Create a floating dialog box with a message for the user to read.
+ * Vanishes after a certain amount of time.
+ */
+var notify = function(msg, duration) {
+	var notifyBox = angular.element('<div class="text-center">'+
+		'<div class="notify" style="max-width: 500px;"><h4 style="margin: 0;">' + msg + '</h4></div></div>');
+	notifyBox.hide().appendTo(angular.element('#top-view')).fadeIn(500);
+	setTimeout(function() {
+		notifyBox.fadeOut(500, function() {
+			notifyBox.remove();
+		});
+	}, duration || 4000);
+};

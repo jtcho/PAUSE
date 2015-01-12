@@ -10,8 +10,7 @@ angular.module('pauseApp')
 		//If we have already existing data, skip character creation.
 		if (storageLiason.isValid()) {
 			cssLink.attr('href', 'styles/themes/'+storageLiason.getTheme()+'.css?v='+Math.random(10,10000));
-
-			// $state.go(storageLiason.getDefaultView(), [], {	location: false });	
+			$state.go(storageLiason.getDefaultView(), [], {	location: false });	
 			// $state.go('main.settings.general', [], {	location: false });
 			// $state.go('simple', [], { location: false});
 			//location: false
@@ -24,7 +23,7 @@ angular.module('pauseApp')
 			storageLiason.init();
 			storageLiason.setTheme(themes[randomThemeIndex]);
 			
-			$state.go('main.newsw', [], {	location: false });	
+			// $state.go('main.newsw', [], {	location: false });	
 		}
 
 		//Set up date to be used in application.
