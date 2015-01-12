@@ -1,6 +1,6 @@
 'use strict';
 
-//Defined in newcharacter.controller.js
+//Defined in util.js
 var transitionTo;
 
 angular.module('pauseApp')

@@ -38,6 +38,14 @@ angular.module('pauseApp').factory('storageLiason', ['localStorageService',
                 this.data.className = newClassName;
                 this.sync();
             },
+            setStrength : function(newStrength) {
+                this.data.strength = newStrength;
+                this.sync();
+            },
+            setWeakness : function(newWeakness) {
+                this.data.weakness = newWeakness;
+                this.sync();
+            },
             setTodos : function(todos) {
                 this.data.todos = todos;
                 this.sync();
@@ -67,6 +75,16 @@ angular.module('pauseApp').factory('storageLiason', ['localStorageService',
             /*
              * GETTER FUNCTIONS
              */
+             getAttributes : function() {
+                return this.data.attributes;
+             },
+             getStrength : function() {
+                return this.data.strength;
+             },
+             getWeakness : function() {
+                return this.data.weakness;
+             },
+             //SETTINGS
              getTheme : function() {
                 return this.settings.theme || 'starryNight';
              },
@@ -83,6 +101,14 @@ angular.module('pauseApp').factory('storageLiason', ['localStorageService',
                 //Initialize User Data.
                 this.data.level = 1;
                 this.data.exp = 0;
+                this.data.attributes = [
+                    ['STR', 0, 'Strength: '],
+                    ['INT', 0, 'Intelligence: '],
+                    ['DEX', 0, 'Dexterity: '],
+                    ['WIS', 0, 'Wisdom: '],
+                    ['LCK', 0, 'Luck: '],
+                    ['CHA', 0, 'Charisma: ']
+                ];
                 //Initialize Settings.
                 this.settings.sound = false;
 

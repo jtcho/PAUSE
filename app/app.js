@@ -48,6 +48,11 @@ angular.module('pauseApp', [
         url: '',
         controller: function($scope) {}
     })
+    .state('main.newsw', {
+        templateUrl: 'views/character_creation/new_sw.html',
+        url: '',
+        controller: 'NewSWCtrl'
+    })
     /*
      * MAIN STATES
      */

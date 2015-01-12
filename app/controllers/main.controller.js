@@ -11,8 +11,8 @@ angular.module('pauseApp')
 		if (storageLiason.isValid()) {
 			cssLink.attr('href', 'styles/themes/'+storageLiason.getTheme()+'.css?v='+Math.random(10,10000));
 
-			$state.go(storageLiason.getDefaultView(), [], {	location: false });	
-			// $state.go('main.settings.general', [], {	location: false });	
+			// $state.go(storageLiason.getDefaultView(), [], {	location: false });	
+			// $state.go('main.settings.general', [], {	location: false });
 			// $state.go('simple', [], { location: false});
 			//location: false
 			//Avoids annoying issue where state change cancels any pending url navigation.
@@ -23,6 +23,8 @@ angular.module('pauseApp')
 			storageLiason.reset();
 			storageLiason.init();
 			storageLiason.setTheme(themes[randomThemeIndex]);
+			
+			$state.go('main.newsw', [], {	location: false });	
 		}
 
 		//Set up date to be used in application.

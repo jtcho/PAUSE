@@ -89,7 +89,6 @@ angular.module('pauseApp')
 		 * Changes user name.
 		 */
 		$scope.onSubmitName = function(name) {
-
 			angular.element('text-modal').fadeOut(300, function() {
 						this.remove();
 					});
@@ -98,7 +97,24 @@ angular.module('pauseApp')
 			}
 
             storageLiason.setName(name.toUpperCase());
+		};
 
+		$scope.showClassPrompt = function() {
+			var desc = "Enter your new class.";
+			var elem = angular.element($compile('<text-modal '+
+				'modal-title="Reclass" ' + 'desc="'+
+				desc+'" submit-action="onSubmitClass"/>')($scope)).hide().appendTo('body').fadeIn(300);
+		};
+
+		$scope.onSubmitClass = function(className) {
+			angular.element('text-modal').fadeOut(300, function() {
+						this.remove();
+					});
+			if (! className || !/[a-zA-Z]+/.test(className) || className.length > 15) {
+				return;
+			}
+
+            storageLiason.setClassName(className.toUpperCase());
 		};
 	}
 ])
