@@ -5,3 +5,4 @@ npm-debug.log
 pause.sublime-project
 pause.sublime-workspace
 app/bower_components/
+.DS_Store

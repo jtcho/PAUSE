@@ -154,6 +154,8 @@ li {
 .settings {
   background-color: rgba(130, 104, 127, 0.6);
   border-color: #e6bcd1; }
+  .settings .divider {
+    background-color: #e6bcd1; }
 
 .settings-inner {
   border-color: #b38bb7; }

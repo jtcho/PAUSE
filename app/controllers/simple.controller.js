@@ -32,7 +32,7 @@ angular.module('pauseApp')
         var hours = $scope.dt.getHours();
         if (hours >= 5 && hours < 12)
         	$scope.timeGreeting = 'morning';
-        else if (hours >= 12 && hours < 5)
+        else if (hours >= 12 && hours < 17)
         	$scope.timeGreeting = 'afternoon';
         else
         	$scope.timeGreeting = 'evening';

@@ -57,13 +57,48 @@ angular.module('pauseApp')
 
 	}
 ])
-.controller('UserSettingsCtrl', ['$scope', '$state', '$compile',
-	function($scope, $state, $compile) {
+.controller('UserSettingsCtrl', ['$scope', '$state', '$compile', 'storageLiason',
+	function($scope, $state, $compile, storageLiason) {
+		/*
+		 * Function: showErasePrompt
+		 * -------------------------
+		 * Shows the erase user data prompt.
+		 */
 		$scope.showErasePrompt = function() {
 			var desc = 'Are you sure you want to erase all your character data?';
 			var elem = angular.element($compile('<boolean-modal '+
 					'modal-title=\"Wipe Data\" ' + 'desc=\"'+desc+'\"' +
 					'/>')($scope)).hide().appendTo('body').fadeIn(300);
+		};
+
+		/*
+		 * Function: showNamePrompt
+		 * -------------------------
+		 * Shows the change avatar name prompt.
+		 */
+		$scope.showNamePrompt = function() {
+			var desc = "Enter your new name.";
+			var elem = angular.element($compile('<text-modal '+
+				'modal-title="Choose New Name" ' + 'desc="'+
+				desc+'" submit-action="onSubmitName"/>')($scope)).hide().appendTo('body').fadeIn(300);
+		};
+
+		/*
+		 * Function: onSubmitName
+		 * -------------------------
+		 * Changes user name.
+		 */
+		$scope.onSubmitName = function(name) {
+
+			angular.element('text-modal').fadeOut(300, function() {
+						this.remove();
+					});
+			if (! name || !/[a-zA-Z]+/.test(name) || name.length > 10) {
+				return;
+			}
+
+            storageLiason.setName(name.toUpperCase());
+
 		};
 	}
 ])

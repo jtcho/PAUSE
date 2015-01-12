@@ -149,6 +149,8 @@ li {
 .settings {
   background-color: #fff;
   border-color: #fff; }
+  .settings .divider {
+    background-color: #fff; }
 
 .settings-inner {
   border-color: #fff; }

@@ -149,6 +149,8 @@ li {
 .settings {
   background-color: transparent;
   border-color: #576b76; }
+  .settings .divider {
+    background-color: #576b76; }
 
 .settings-inner {
   border-color: #a9bfcc; }

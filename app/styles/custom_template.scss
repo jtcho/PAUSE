@@ -249,6 +249,10 @@ li {color: $liColor;}
 .settings {
 	background-color: $settingsBackgroundFill;
 	border-color: $settingsBorder;
+	
+	.divider {
+		background-color: $settingsBorder;
+	}
 }
 
 .settings-inner {

@@ -1,13 +1,13 @@
 'use strict';
 
 angular.module('pauseApp')
-.directive('booleanModal', ['$window', '$state', 'storageLiason',
+.directive('textModal', ['$window', '$state', 'storageLiason',
 	function($window, $state, storageLiason) {
 		return {
 			restrict: 'E',
-			templateUrl: 'views/directives/booleanmodal.directive.html',
+			templateUrl: 'views/directives/modals/textmodal.directive.html',
 			scope: {
-				info:'='
+				submitAction: '='
 			},
 			link: function(scope, element, attrs) {
 				scope.title = attrs.modalTitle;
@@ -18,11 +18,7 @@ angular.module('pauseApp')
 						this.remove();
 					});
 				};
-				scope.wipeUserData = function() {
-					storageLiason.reset();
-					scope.closeModal();
-					$state.go('main.newcharacter', [], {	location: false });	
-				};
+				
 			}
 		};
 	}

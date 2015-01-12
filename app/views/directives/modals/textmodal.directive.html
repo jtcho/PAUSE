@@ -1,0 +1,15 @@
+
+<div class="modal text-center">
+	<div class="modal-close" ng-click="closeModal()"/>
+	<h2>
+		{{title}}
+	</h2>
+	<h4 >{{desc}}</h4>
+	<form name ="textorm" class="form-name" ng-submit="submitAction(textData)">
+		<input name="input" class="input-name" placeholder="" ng-model="textData">
+	</form>
+<!-- 
+	<div class="modal-booleanoption" ng-click="wipeUserData()"><h3>YES</h3>
+	</div><div class="modal-booleanoption" ng-click="closeModal()"><h3>NO</h3> -->
+	</div>
+</div>
