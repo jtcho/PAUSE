@@ -1,5 +1,10 @@
 'use strict';
 
+//Declarations from util.js.
+var transitionTo;
+var zodiacSign;
+var isVowel;
+
 angular.module('pauseApp')
 //CONTROLLER FOR CHOOSING NAME PAGE
 .controller('NewNameCtrl', ['$scope', '$state', 'storageLiason',

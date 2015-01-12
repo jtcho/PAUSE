@@ -77,7 +77,7 @@ angular.module('pauseApp')
 		 * Shows the change avatar name prompt.
 		 */
 		$scope.showNamePrompt = function() {
-			var desc = "Enter your new name.";
+			var desc = 'Enter your new name.';
 			var elem = angular.element($compile('<text-modal '+
 				'modal-title="Choose New Name" ' + 'desc="'+
 				desc+'" submit-action="onSubmitName"/>')($scope)).hide().appendTo('body').fadeIn(300);
@@ -100,7 +100,7 @@ angular.module('pauseApp')
 		};
 
 		$scope.showClassPrompt = function() {
-			var desc = "Enter your new class.";
+			var desc = 'Enter your new class.';
 			var elem = angular.element($compile('<text-modal '+
 				'modal-title="Reclass" ' + 'desc="'+
 				desc+'" submit-action="onSubmitClass"/>')($scope)).hide().appendTo('body').fadeIn(300);
