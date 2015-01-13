@@ -30,6 +30,9 @@
   .settings-tab p, .settings-tab-right p {
     margin: 7px auto; }
 
+.settings-tab-right {
+  top: -59px; }
+
 .settings-tab-active {
   opacity: 1.0; }
 

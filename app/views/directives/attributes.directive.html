@@ -1,7 +1,7 @@
 <!-- Attributes Directive for Status Screen -->
 <ul class="attributes">
 	<li ng-repeat="attribute in attributes">{{attribute[0]}}<div class="attribute" 
-		tooltip tooltip-content="{{attribute[2]}} {{Math.round(attribute[1])}}%">
-	<div class="attribute-fill" style="width: {{attribute[1]}}%;"></div>
+		tooltip tooltip-content="{{attribute[2]}} {{attribute[1]}}">
+	<div class="attribute-fill" style="width: {{attribute[1]/50 * 100}}%;"></div>
 	</div></li>
 </ul>

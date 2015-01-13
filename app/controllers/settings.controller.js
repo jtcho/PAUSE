@@ -6,6 +6,14 @@ angular.module('pauseApp')
 .controller('SettingsCtrl', ['$scope', '$state', '$document',
 	function($scope, $state, $document) {
 
+		// //Fadein effect.
+		angular.element('.settings-screen').hide().fadeIn(1000);
+		// angular.element('.settings-screen').css('opacity', 0.0);
+		// angular.element('.settings-screen').animate({
+		// 		opacity: 1,
+		// 		'-webkit-animation-fill-mode': 'forwards'
+		// 	}, 1000, function() {});
+
 		//Setting Tabs
 		$scope.settingTabs = [
 			{

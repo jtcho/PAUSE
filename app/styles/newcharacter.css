@@ -67,6 +67,9 @@ span {
 .input-name:focus {
   outline: 0; }
 
+input:focus::-webkit-input-placeholder {
+  color: transparent; }
+
 .console-name {
   width: 93%;
   margin: 20px auto;

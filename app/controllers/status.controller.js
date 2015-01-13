@@ -109,6 +109,48 @@ angular.module('pauseApp')
 
 		};
 
+		var onLevelUp = function() {
+			soundManager.playSound('levelUpAudio','levelup', 500, 13000);
+
+			var oldExpPercent = $scope.expPercent;
+			$scope.expPercent = 1;
+			$timeout(function() {
+				$scope.expPercent = 0;
+				angular.element('.expbar_fill').removeClass('expbar_transition');
+				$timeout(function() {
+					$scope.expPercent = oldExpPercent;
+					angular.element('.expbar_fill').addClass('expbar_transition');
+				}, 300);
+			}, 600);
+
+			//Calculate attribute bonuses. Nonuniform probability.
+			//Maximum gain is 0-2.
+			//Weakness gain is 0-1.
+			//Strength gain is 0-3.
+			var attributes = storageLiason.getAttributes();
+			var strength = storageLiason.getStrength();
+			var weakness = storageLiason.getWeakness();
+			for (var i = 0; i < attributes.length; i++) {
+				var random = Math.random();
+				if (i === strength) {
+					if (random > 0.3)
+						attributes[i][1] += Math.floor(1 + Math.random()*3);
+				}
+				else if (i === weakness) {
+					if (random > 0.7)
+						attributes[i][1] += Math.floor(1 + Math.random()*2);
+				}
+				else {
+					if (random > 0.5)
+						attributes[i][1] += Math.floor(1 + Math.random()*2);
+				}
+				if (attributes[i] > 50)
+					attributes[i] = 50;
+			}
+			$scope.attributes = attributes;
+			storageLiason.setAttributes(attributes);
+		};
+
 		/*
 		 * Function: completeTodo
 		 * ----------------------
@@ -130,18 +172,7 @@ angular.module('pauseApp')
 				var levelUp = $scope.data.level != oldLevel;
 				//Kind of hacky solution.
 				if (levelUp) {
-					soundManager.playSound('levelUpAudio','levelup', 500, 13000);
-
-					var oldExpPercent = $scope.expPercent;
-					$scope.expPercent = 1;
-					$timeout(function() {
-						$scope.expPercent = 0;
-						angular.element('.expbar_fill').removeClass('expbar_transition');
-						$timeout(function() {
-							$scope.expPercent = oldExpPercent;
-							angular.element('.expbar_fill').addClass('expbar_transition');
-						}, 300);
-					}, 600);
+					onLevelUp();
 				}
 
 				//ANIMATE EXP POINTS

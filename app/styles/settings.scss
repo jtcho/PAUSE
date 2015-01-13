@@ -38,6 +38,11 @@
 	}
 }
 
+.settings-tab-right {
+	//i don't know why, but animating the settings fucks with my life
+	top:-59px; 
+}
+
 .settings-tab-active {
 	opacity: 1.0;
 }

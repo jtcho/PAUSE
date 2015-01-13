@@ -50,6 +50,14 @@ angular.module('pauseApp').factory('storageLiason', ['localStorageService',
                 this.data.todos = todos;
                 this.sync();
             },
+            setAttribute : function(id, value) {
+                this.data.attributes[id] = value;
+                this.sync();
+            },
+            setAttributes : function(attributes) {
+                this.data.attributes = attributes;
+                this.sync();
+            },
             setValid : function(valid) {
                 this.data.valid = valid;
                 this.sync();
@@ -83,6 +91,9 @@ angular.module('pauseApp').factory('storageLiason', ['localStorageService',
              },
              getWeakness : function() {
                 return this.data.weakness;
+             },
+             getAttribute : function(id) {
+                return this.data.attributes[id];
              },
              //SETTINGS
              getTheme : function() {
@@ -123,7 +134,7 @@ angular.module('pauseApp').factory('storageLiason', ['localStorageService',
             },
             reset : function() {
                 this.data = {};
-                this.sync();
+                this.init();
             }
         };
     }
