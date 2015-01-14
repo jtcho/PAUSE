@@ -18,11 +18,21 @@ angular.module('pauseApp')
 		$scope.onSubmit = function() {
 
 			//Don't accept empty names or non-alphabetical.
-			if (! $scope.characterName || !/[a-zA-Z]+/.test($scope.characterName) || $scope.characterName.length > 10)
-				return;
-
-            storageLiason.setName($scope.characterName.toUpperCase());
-			transitionTo($state, 'main.newgender');
+			if (! $scope.characterName) {
+				notify('Character name can\'t be empty!');
+			}
+			else if (!/[a-zA-Z]+/.test($scope.characterName)) {
+				notify('Please choose an alphabetical name only.');
+				$scope.characterName = '';
+			}
+			else if ($scope.characterName.length > 10) {
+				notify('That name is too long, sorry!')
+				$scope.characterName = '';
+			}
+			else {
+            	storageLiason.setName($scope.characterName.toUpperCase());
+				transitionTo($state, 'main.newgender');
+			}
 		};
 	}
 ])
@@ -90,11 +100,21 @@ function($scope, $state, $filter, storageLiason) {
 		$scope.article = isVowel($scope.zodiac.charAt(0)) ? 'An' : 'A';
 		$scope.onSubmit = function() {
 
-			if (! $scope.className || !/[a-zA-Z]+/.test($scope.className) || $scope.className.length > 15)
-				return;
-
-			storageLiason.setClassName($scope.className.toUpperCase());
-			transitionTo($state, 'main.newsw');
+			if (! $scope.className) {
+				notify('Class name can\'t be empty!');
+			}
+			else if (!/[a-zA-Z]+/.test($scope.className)) {
+				notify('Please choose an alphabetical class name only.');
+				$scope.className = '';
+			}
+			else if ($scope.className.length > 15) {
+				notify('That class name is too long, sorry!');
+				$scope.className = '';
+			}
+			else {
+				storageLiason.setClassName($scope.className.toUpperCase());
+				transitionTo($state, 'main.newsw');
+			}	
 		};
 
 	}
@@ -123,11 +143,12 @@ function($scope, $state, $filter, storageLiason) {
         	if ($scope.sIndex === $scope.wIndex) {
         		notify('You can\'t choose the same attribute for the strong/weak points!');
         	}
-
-        	storageLiason.setStrength($scope.sIndex);
-        	storageLiason.setWeakness($scope.wIndex);
-        	storageLiason.setValid(true);
-        	transitionTo($state, 'main.status');
+        	else {
+	        	storageLiason.setStrength($scope.sIndex);
+	        	storageLiason.setWeakness($scope.wIndex);
+	        	storageLiason.setValid(true);
+	        	transitionTo($state, 'main.status');
+        	}
         };
 	}
 ])

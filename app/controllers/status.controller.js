@@ -114,6 +114,8 @@ angular.module('pauseApp')
 
 			var oldExpPercent = $scope.expPercent;
 			$scope.expPercent = 1;
+			//Necessary shenanigans to give the illusion of 'proper' exbar movement. Otherwise
+			//expbar would go backwards...
 			$timeout(function() {
 				$scope.expPercent = 0;
 				angular.element('.expbar_fill').removeClass('expbar_transition');
@@ -147,6 +149,7 @@ angular.module('pauseApp')
 				if (attributes[i] > 50)
 					attributes[i] = 50;
 			}
+			//Update attribute values.
 			$scope.attributes = attributes;
 			storageLiason.setAttributes(attributes);
 		};
@@ -216,17 +219,5 @@ angular.module('pauseApp')
 
 			storageLiason.setTodos($scope.todos);
 		};
-
-
-		// setInterval(function() {
-		// 	$rootScope.data.expPercent += 0.001;
-		// 	if ($rootScope.data.expPercent > 1.0) {
-		// 		$rootScope.data.expPercent -= 1.0;
-		// 		$rootScope.data.level++;
-		// 	}
-		// 	if ($rootScope.data.level > 100)
-		// 		$rootScope.data.level = 1;
-		// 	$scope.$apply();
-		// }, 15);
 	}
 ]);

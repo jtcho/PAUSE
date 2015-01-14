@@ -1,0 +1,12 @@
+
+<div class="modal text-center">
+	<!-- <div class="modal-close" ng-click="closeModal()"/> -->
+	<h2>
+		{{title}}
+	</h2>
+	<h4 >{{desc}}</h4>
+
+	<form name ="textform" class="form-name" ng-submit="submitAction(textData)">
+		<input name="input" class="input-name" placeholder="" ng-model="textData" ng-keydown="onUserInput($event)">
+	</form>
+</div>

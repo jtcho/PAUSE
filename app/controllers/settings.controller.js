@@ -116,13 +116,26 @@ angular.module('pauseApp')
 
 		$scope.onSubmitClass = function(className) {
 			angular.element('text-modal').fadeOut(300, function() {
-						this.remove();
-					});
+				this.remove();
+			});
 			if (! className || !/[a-zA-Z]+/.test(className) || className.length > 15) {
 				return;
 			}
 
             storageLiason.setClassName(className.toUpperCase());
+		};
+
+		$scope.showLocationPrompt = function() {
+			var desc = 'Enter your location.';
+			angular.element($compile('<location-modal '+
+				'modal-title="Choose Location" ' + 'desc="'+
+				desc+'" submit-action="onSubmitLocation"/>')($scope)).hide().appendTo('body').fadeIn(300);
+		};
+
+		$scope.onSubmitLocation = function(location) {
+			angular.element('location-modal').fadeOut(300, function() {
+				this.remove();
+			});
 		};
 	}
 ])

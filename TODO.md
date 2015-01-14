@@ -1,6 +1,5 @@
 TODOs
 =====
-- Add dialog windows.
 - Add window for level up and attribute increments.
 - Implement remaining User Settings buttons.
 - Implement weather/city selection.

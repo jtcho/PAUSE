@@ -97,7 +97,7 @@
   border-radius: 10px;
   width: 0%;
   height: 100%;
-  -webkit-transition: width 3s; }
+  -webkit-transition: width 1s; }
 
 .container .gender-symbol {
   width: 47px;

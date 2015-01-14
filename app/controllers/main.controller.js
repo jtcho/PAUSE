@@ -1,8 +1,8 @@
 'use strict';
 
 angular.module('pauseApp')
-.controller('MainCtrl', ['$scope', 'localStorageService', '$state', 'storageLiason',
-	function($scope, localStorageService, $state, storageLiason) {
+.controller('MainCtrl', ['$scope', 'localStorageService', '$state', 'storageLiason', '$http',
+	function($scope, localStorageService, $state, storageLiason, $http) {
 
 		var themes = ['metroTwilight', 'starryNight'];
 		var cssLink = angular.element('link[title="activeTheme"]');

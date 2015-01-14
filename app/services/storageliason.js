@@ -113,12 +113,12 @@ angular.module('pauseApp').factory('storageLiason', ['localStorageService',
                 this.data.level = 1;
                 this.data.exp = 0;
                 this.data.attributes = [
-                    ['STR', 0, 'Strength: '],
-                    ['INT', 0, 'Intelligence: '],
-                    ['DEX', 0, 'Dexterity: '],
-                    ['WIS', 0, 'Wisdom: '],
-                    ['LCK', 0, 'Luck: '],
-                    ['CHA', 0, 'Charisma: ']
+                    ['STR', Math.floor(Math.random()*5), 'Strength: '],
+                    ['INT', Math.floor(Math.random()*5), 'Intelligence: '],
+                    ['DEX', Math.floor(Math.random()*5), 'Dexterity: '],
+                    ['WIS', Math.floor(Math.random()*5), 'Wisdom: '],
+                    ['LCK', Math.floor(Math.random()*5), 'Luck: '],
+                    ['CHA', Math.floor(Math.random()*5), 'Charisma: ']
                 ];
                 //Initialize Settings.
                 this.settings.sound = false;
