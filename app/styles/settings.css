@@ -126,3 +126,33 @@
   border: 5px #a9bfcc solid;
   opacity: 0.8;
   cursor: pointer; }
+
+.input-location {
+  font-size: 2em;
+  width: 20em; }
+
+.ui-autocomplete {
+  height: 200px;
+  overflow-y: scroll;
+  overflow-x: hidden; }
+
+.ui-autocomplete::-webkit-scrollbar {
+  display: none; }
+
+.ui-autocomplete::-webkit-scrollbar-track {
+  background-color: #d6eaeb; }
+
+.ui-autocomplete::-webkit-scrollbar-thumb {
+  background-color: #89a0a2; }
+
+.ui-menu .ui-menu-item a.ui-corner-all:hover, .ui-menu .ui-menu-item a.ui-corner-all:focus, .ui-menu .ui-menu-item a.ui-corner-all:active {
+  background: #ff8a00 !important;
+  color: #000;
+  border-radius: 0; }
+
+.ui-state-hover, .ui-widget-content .ui-state-hover, .ui-widget-header .ui-state-hover, .ui-state-focus, .ui-widget-content .ui-state-focus, .ui-widget-header .ui-state-focus {
+  background: #ff8a00;
+  border: none;
+  color: #000;
+  border-radius: 0;
+  font-weight: normal; }

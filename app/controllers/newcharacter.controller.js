@@ -26,7 +26,7 @@ angular.module('pauseApp')
 				$scope.characterName = '';
 			}
 			else if ($scope.characterName.length > 10) {
-				notify('That name is too long, sorry!')
+				notify('That name is too long, sorry!');
 				$scope.characterName = '';
 			}
 			else {

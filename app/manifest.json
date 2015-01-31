@@ -4,7 +4,9 @@
     "name": "PAUSE",
     "description": "Replace your new tab page with a RPG-style status screen!",
     "version": "0.0",
-    "permissions": [],
+    "permissions": [
+    	"http://*.geobytes.com/"
+    ],
     "chrome_url_overrides" : {
         "newtab": "index.html"
     }

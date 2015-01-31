@@ -61,6 +61,7 @@ module.exports = function(grunt) {
             },
             all: [
                 'app/**/*.js',
+                '!app/scripts/jquery-ui.min.js',
                 '!app/bower_components/**/*.js',
                 '!app/bower_components/animate.css/*.js'
             ],
